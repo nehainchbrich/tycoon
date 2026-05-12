@@ -1311,6 +1311,10 @@ body.footer-only-page .header.scrolled .nav-cta {
     overflow: hidden;
 }
 
+#gallery {
+    padding: 3rem 0;
+}
+
 .amenities-unique__bg {
     position: absolute;
     inset: 0;
