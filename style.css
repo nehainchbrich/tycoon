@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --primary: #C5A059;
     --primary-light: #E5C17B;
     --primary-dark: #A68045;
@@ -381,6 +381,10 @@ body.footer-only-page .header.scrolled .nav-cta {
     /* Fallback */
 }
 
+.loc__strip .loc-chip {
+    color: rgb(250 250 250 / 78%);
+}
+
 .hero__form-main {
     padding: 28px 30px 24px;
     /* Shorter padding */
@@ -404,7 +408,8 @@ body.footer-only-page .header.scrolled .nav-cta {
 
 .hero__form-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 34px; /* Slightly smaller */
+    font-size: 34px;
+    /* Slightly smaller */
     color: #fff;
     margin-bottom: 6px;
     font-weight: 500;
@@ -456,7 +461,8 @@ body.footer-only-page .header.scrolled .nav-cta {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    padding: 15px 18px 15px 48px; /* Shorter vertical padding */
+    padding: 15px 18px 15px 48px;
+    /* Shorter vertical padding */
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
@@ -475,7 +481,8 @@ body.footer-only-page .header.scrolled .nav-cta {
     color: #1a1208;
     border: none;
     border-radius: 10px;
-    padding: 18px; /* Reduced from 22px */
+    padding: 18px;
+    /* Reduced from 22px */
     font: 700 12px/1 "Montserrat", sans-serif;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -1443,6 +1450,7 @@ body.footer-only-page .header.scrolled .nav-cta {
     font-size: 16px;
     color: rgba(31, 20, 8, 0.6);
     max-width: 600px;
+    margin: 0px auto;
 }
 
 .amenities-unique__grid {
