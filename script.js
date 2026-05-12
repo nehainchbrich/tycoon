@@ -4,13 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Header Scroll Effect
     const header = document.querySelector('.header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    }
 
     // Intersection Observer for Reveal Animations
     const revealOptions = {
@@ -149,5 +151,26 @@ document.addEventListener('DOMContentLoaded', () => {
         amenitiesPrev.addEventListener('click', () => {
             amenitiesContainer.scrollBy({ left: -200, behavior: 'smooth' });
         });
+    }
+
+    // Creative gallery reveal on scroll
+    const creativeGallery = document.querySelector('.gallery-creative');
+    if (creativeGallery) {
+        if (prefersReducedMotion) {
+            creativeGallery.classList.add('is-revealed');
+        } else {
+            const creativeGalleryObserver = new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            creativeGallery.classList.add('is-revealed');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.18, rootMargin: "0px 0px -10% 0px" }
+            );
+            creativeGalleryObserver.observe(creativeGallery);
+        }
     }
 });

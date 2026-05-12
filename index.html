@@ -10,13 +10,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Cookie&family=Montserrat:wght@300;400;500;600;700;800&family=Pinyon+Script&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body>
+<body class="footer-only-page">
 
     <!-- Header -->
     <header class="header">
@@ -32,253 +32,449 @@
             </div>
             <nav class="nav">
                 <a href="#home">HOME</a>
-                <a href="#about">ABOUT</a>
+                <a href="#contact">ABOUT</a>
                 <a href="#amenities">AMENITIES</a>
                 <a href="#gallery">GALLERY</a>
-                <a href="#location">LOCATION</a>
+                <a href="#contact">LOCATION</a>
                 <a href="#contact">CONTACT</a>
             </nav>
-            <a class="nav-cta" href="#contact">ENQUIRE NOW <i data-lucide="arrow-right"></i></a>
+            <a class="nav-cta" href="#enquire">ENQUIRE NOW <i data-lucide="arrow-right"></i></a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-bg">
-            <img src="luxury_night_exterior_1778309376797.png" alt="Luxury Residence">
-            <div class="hero-overlay"></div>
-            <div class="hero-spotlight" aria-hidden="true"></div>
-            <div class="hero-noise" aria-hidden="true"></div>
-            <div class="hero-orbs" aria-hidden="true">
-                <span class="orb orb-1"></span>
-                <span class="orb orb-2"></span>
-                <span class="orb orb-3"></span>
-            </div>
+    <!-- Hero Banner: Cinematic Editorial -->
+    <section class="hero" id="home" aria-label="Hero banner">
+        <div class="hero__bg">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=2000" alt="Luxury Interior" loading="eager" decoding="async" class="hero__img">
+            <div class="hero__overlay" aria-hidden="true"></div>
+            <!-- Decorative swirl -->
+            <div class="hero__swirl" aria-hidden="true"></div>
         </div>
-
-        <div class="container hero-content">
-            <div class="hero-text-wrap">
-               
-                <h1 class="main-title">Elevate Your <br><span class="hero-accent">Lifestyle</span></h1>
-                <p class="hero-desc">Modern architecture, green surroundings, and world-class amenities—crafted for comfort and prestige.</p>
-                <div class="hero-chips" aria-label="Key highlights">
-                    <span class="hero-chip"><i data-lucide="shield-check"></i> RERA Approved</span>
-                    <span class="hero-chip"><i data-lucide="leaf"></i> Green Living</span>
-                    <span class="hero-chip"><i data-lucide="sparkles"></i> Premium Finishes</span>
-                </div>
-                <div class="hero-actions">
-                    <a class="hero-primary-btn" href="#about">EXPLORE PROJECT <i data-lucide="arrow-right"></i></a>
-                    <a class="hero-secondary-link" href="#contact">GET PRICING <i data-lucide="arrow-right"></i></a>
+        
+        <div class="container hero__inner">
+            <div class="hero__content reveal-up">
+                <span class="hero__badge">
+                    <i data-lucide="sparkles"></i> Godrej Samaris
+                </span>
+                
+                <h1 class="hero__title">
+                    The Last & Largest<br>Land Parcel <span class="hero__title--alt">on Golf Course Road</span>
+                </h1>
+                
+                <div class="hero__divider"></div>
+                
+                <p class="hero__sub">
+                    Experience the pinnacle of luxury with 7.5 acres of ecosystem and 5 signature towers, all in the heart of Golf Course Road.
+                </p>
+                
+                <div class="hero__actions">
+                    <a href="#contact" class="hero__btn hero__btn--primary">
+                        EXPLORE RESIDENCES <i data-lucide="move-right"></i>
+                    </a>
+                    <a href="#gallery" class="hero__btn hero__btn--outline">
+                        VIEW GALLERY <i data-lucide="image"></i>
+                    </a>
                 </div>
             </div>
 
-            <div class="hero-enquiry" aria-label="Enquiry form">
-                <div class="hero-form-card">
-                    <div class="hero-form-head">
-                        <h3>ENQUIRE NOW</h3>
-                        <p>Get price, brochure & site visit.</p>
+            <!-- Two-Tone Form Card -->
+            <div class="hero__form-card reveal-up">
+                <div class="hero__form-main">
+                    <div class="hero__form-head">
+                        <h2 class="hero__form-title">Quick Interest</h2>
+                        <p class="hero__form-sub">WE'LL CALL YOU BACK IN 15 MINS</p>
+                        <div class="hero__form-divider"></div>
                     </div>
-                    <form id="hero-form" class="hero-form">
-                        <label class="hero-field">
-                            <span class="hero-field-icon"><i data-lucide="user"></i></span>
-                            <input type="text" name="name" placeholder="Your Name" required>
-                        </label>
-                        <label class="hero-field">
-                            <span class="hero-field-icon"><i data-lucide="phone"></i></span>
+                    
+                    <form id="hero-form" class="hero__form">
+                        <div class="hero__field">
+                            <i data-lucide="user"></i>
+                            <input type="text" name="name" placeholder="Full Name" required>
+                        </div>
+                        <div class="hero__field">
+                            <i data-lucide="phone"></i>
                             <input type="tel" name="phone" placeholder="Mobile Number" required>
-                        </label>
-                        <label class="hero-field">
-                            <span class="hero-field-icon"><i data-lucide="mail"></i></span>
+                        </div>
+                        <div class="hero__field">
+                            <i data-lucide="mail"></i>
                             <input type="email" name="email" placeholder="Email Address" required>
-                        </label>
-                        <label class="hero-field">
-                            <span class="hero-field-icon"><i data-lucide="message-square"></i></span>
-                            <textarea name="message" placeholder="Your Message (optional)" rows="3"></textarea>
-                        </label>
-                        <button type="submit" class="hero-submit-btn">SUBMIT ENQUIRY <i data-lucide="arrow-right"></i></button>
-                        <div class="hero-form-note">By submitting, you agree to be contacted.</div>
+                        </div>
+                        <button type="submit" class="hero__submit">
+                            SUBMIT REQUEST <i data-lucide="move-right"></i>
+                        </button>
                     </form>
                 </div>
-            </div>
-        </div>
-
-        <div class="hero-bottom-curve">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                    d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5,73.84-4.36,147.54,16.88,218.2,35.26,69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-1.11,1200,0V0Z"
-                    class="shape-fill"></path>
-            </svg>
-        </div>
-    </section>
-
-    <!-- Location Section -->
-    <section id="location" class="location-section">
-        <div class="container text-center reveal-up">
-            <span class="section-label-center">LOCATION</span>
-            <h2 class="section-title">Connected. Convenient. Central.</h2>
-            <p class="location-desc">Add your project address and key connectivity points here.</p>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="about-bg" aria-hidden="true">
-            <span class="about-grid"></span>
-            <span class="about-glow"></span>
-        </div>
-        <div class="container grid-about">
-            <div class="about-text reveal-left">
-                <span class="section-label">ABOUT THE PROJECT</span>
-                <h2 class="section-title about-title">Thoughtfully Designed. <br><span class="about-title-accent">Perfectly Crafted.</span></h2>
-                <p>Every corner of this project is designed with precision and passion. From world-class architecture to
-                    lush green spaces, it's a place where life feels complete.</p>
-
-                <div class="about-highlights" aria-label="Design highlights">
-                    <div class="about-highlight-card">
-                        <div class="about-highlight-icon"><i data-lucide="sparkles"></i></div>
-                        <div>
-                            <h3>Design Philosophy</h3>
-                            <p>Light, proportion and flow—planned for calm daily living.</p>
-                        </div>
-                    </div>
-                    <div class="about-highlight-card">
-                        <div class="about-highlight-icon"><i data-lucide="hammer"></i></div>
-                        <div>
-                            <h3>Premium Craft</h3>
-                            <p>Refined finishes and durable materials with a luxury feel.</p>
-                        </div>
-                    </div>
-                    <div class="about-highlight-card">
-                        <div class="about-highlight-icon"><i data-lucide="leaf"></i></div>
-                        <div>
-                            <h3>Green Living</h3>
-                            <p>Open spaces and landscaped greens for better wellbeing.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="about-actions">
-                    <a href="#amenities" class="btn-outline">KNOW MORE <i data-lucide="arrow-right"></i></a>
-                    <div class="about-signature" aria-label="Signature line">
-                        <span class="about-signature-pill">Signature Living</span>
-                        <span class="about-signature-line"></span>
-                    </div>
+                
+                <div class="hero__form-footer">
+                    <i data-lucide="sparkles"></i>
+                    <p>CURATED LIVING.<br>TIMELESS VALUE.</p>
                 </div>
             </div>
+        </div>
 
-            <div class="about-image-wrap reveal-right">
-                <div class="about-image-stack">
-                    <div class="circular-mask">
-                        <img src="luxury_rooftop_deck_1778309392201.png" alt="Lifestyle">
-                        <div class="glow-ring"></div>
+        <!-- Project Stats Strip -->
+        <div class="hero__stats-strip">
+            <div class="container">
+                <div class="h-stats">
+                    <div class="h-stat-item">
+                        <span class="h-stat-val">7.5 Acres</span>
+                        <span class="h-stat-lab">of Ecosystem</span>
                     </div>
-                    <div class="about-float-card about-float-top" aria-hidden="true">
-                        <i data-lucide="shield-check"></i>
-                        <div>
-                            <div class="af-title">Secure Community</div>
-                            <div class="af-sub">Smart + staffed security</div>
-                        </div>
+                    <div class="h-stat-sep"></div>
+                    <div class="h-stat-item">
+                        <span class="h-stat-val">5 Luxury</span>
+                        <span class="h-stat-lab">Towers</span>
                     </div>
-                    <div class="about-float-card about-float-bottom" aria-hidden="true">
-                        <i data-lucide="map-pin"></i>
-                        <div>
-                            <div class="af-title">Prime Connectivity</div>
-                            <div class="af-sub">Close to essentials</div>
-                        </div>
+                    <div class="h-stat-sep"></div>
+                    <div class="h-stat-item">
+                        <span class="h-stat-val">84% Green</span>
+                        <span class="h-stat-lab">Dedicated Area</span>
+                    </div>
+                    <div class="h-stat-sep"></div>
+                    <div class="h-stat-item">
+                        <span class="h-stat-val">Starting at 11.4 Cr</span>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Scroll Indicator -->
+        <div class="hero__scroll">
+            <div class="hero__scroll-line"></div>
+        </div>
     </section>
 
-    <!-- Amenities Section -->
-    <section id="amenities" class="amenities-section">
+    <!-- Overview: Creative Typographic Strip -->
+    <section class="ov2" id="overview" aria-label="Project overview">
+        <div class="container ov2__inner">
+
+            <!-- Top label row -->
+            <div class="ov2__label-row reveal-up">
+                <span class="ov2__kicker"><i data-lucide="sparkles"></i> PROJECT OVERVIEW</span>
+                <div class="ov2__rule" aria-hidden="true"></div>
+                <a href="#contact" class="ov2__cta">Enquire Now <i data-lucide="arrow-right"></i></a>
+            </div>
+
+            <!-- Headline -->
+            <h2 class="ov2__title reveal-up">The Signature Address of Modern Achievers</h2>
+
+            <!-- Stats strip -->
+            <div class="ov2__stats reveal-up">
+                <div class="ov2-stat">
+                    <span class="ov2-stat__num">Ultra-Luxury</span>
+                    <span class="ov2-stat__label">Residences</span>
+                </div>
+                <div class="ov2-stat__sep" aria-hidden="true"></div>
+                <div class="ov2-stat">
+                    <span class="ov2-stat__num">7.5 Acres</span>
+                    <span class="ov2-stat__label">of Ecosystem</span>
+                </div>
+                <div class="ov2-stat__sep" aria-hidden="true"></div>
+                <div class="ov2-stat">
+                    <span class="ov2-stat__num">World-Class</span>
+                    <span class="ov2-stat__label">Amenities</span>
+                </div>
+            </div>
+
+            <!-- Tag row -->
+            <div class="ov2__tags reveal-up">
+                <div class="loc-chip"><i data-lucide="navigation"></i><span>Golf Course Road</span></div>
+                <div class="loc-chip"><i data-lucide="award"></i><span>Gensler Designed</span></div>
+                <div class="loc-chip"><i data-lucide="trees"></i><span>84% Greens</span></div>
+                <div class="loc-chip"><i data-lucide="plane"></i><span>IGI Airport 30 Mins</span></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- International Design Excellence -->
+    <section class="design-excellence" aria-label="Design Partners">
         <div class="container">
-            <div class="section-header text-center reveal-up">
-                <span class="section-label-center">AMENITIES</span>
-                <h2 class="section-title">Elevate Every Moment</h2>
+            <div class="design-excellence__head reveal-up">
+                <span class="design-excellence__kicker">PARTNERS IN PERFECTION</span>
+                <h2 class="design-excellence__title">Powered by International Design Excellence</h2>
+                <p class="design-excellence__desc">Godrej Samaris is a collaborative masterpiece by some of the world's most visionary design firms.</p>
             </div>
 
-            <div class="amenities-carousel reveal-up">
-                <button class="nav-btn prev"><i data-lucide="chevron-left"></i></button>
-                <div class="amenities-grid">
-                    <div class="amenity-item">
-                        <div class="amenity-icon-card"><i data-lucide="home"></i></div>
-                        <span>Clubhouse</span>
-                    </div>
-                    <div class="amenity-item">
-                        <div class="amenity-icon-card"><i data-lucide="waves"></i></div>
-                        <span>Swimming Pool</span>
-                    </div>
-                    <div class="amenity-item">
-                        <div class="amenity-icon-card"><i data-lucide="dumbbell"></i></div>
-                        <span>Fitness Center</span>
-                    </div>
-                    <div class="amenity-item">
-                        <div class="amenity-icon-card"><i data-lucide="leaf"></i></div>
-                        <span>Landscape Garden</span>
-                    </div>
-                    <div class="amenity-item">
-                        <div class="amenity-icon-card"><i data-lucide="baby"></i></div>
-                        <span>Children's Play Area</span>
-                    </div>
-                    <div class="amenity-item">
-                        <div class="amenity-icon-card"><i data-lucide="shield"></i></div>
-                        <span>24x7 Security</span>
-                    </div>
-                    <div class="amenity-item">
-                        <div class="amenity-icon-card"><i data-lucide="zap"></i></div>
-                        <span>Power Backup</span>
-                    </div>
+            <div class="design-excellence__grid reveal-up">
+                <!-- Gensler -->
+                <div class="partner-card">
+                    <div class="partner-card__flag">USA 🇺🇸</div>
+                    <h3 class="partner-card__name">Gensler</h3>
+                    <p class="partner-card__text">The world-renowned architects behind some of the globe’s most iconic landmarks and luxury developments.</p>
                 </div>
-                <button class="nav-btn next"><i data-lucide="chevron-right"></i></button>
-            </div>
 
-            <div class="amenity-hero-img reveal-up">
-                <img src="luxury_amenities_pool_1778306763583.png" alt="Pool Area">
-                <div class="amenity-hero-overlay"></div>
+                <!-- Arcop -->
+                <div class="partner-card">
+                    <div class="partner-card__flag">INDIA 🇮🇳</div>
+                    <h3 class="partner-card__name">Arcop</h3>
+                    <p class="partner-card__text">One of India’s most reputed architectural firms, known for premium residential and urban projects.</p>
+                </div>
+
+                <!-- Cooper Hill -->
+                <div class="partner-card">
+                    <div class="partner-card__flag">SINGAPORE 🇸🇬</div>
+                    <h3 class="partner-card__name">Cooper Hill</h3>
+                    <p class="partner-card__text">Internationally acclaimed landscape designers famous for creating luxury resort-style experiences worldwide.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery-section">
-        <div class="container">
-            <div class="section-header text-center reveal-up">
-                <span class="section-label-center">GALLERY</span>
-                <h2 class="section-title">Spaces That Inspire</h2>
+    <!-- Location Connectivity -->
+    <section class="loc" id="location" aria-label="Location">
+        <div class="loc__bg" aria-hidden="true"></div>
+        <div class="container loc__inner">
+
+            <!-- Head -->
+            <div class="loc__head reveal-up">
+                <span class="loc__kicker"><i data-lucide="map-pin"></i> LOCATION</span>
+                <h2 class="loc__title">Connected.<br>Convenient. Central.</h2>
+                <p class="loc__sub">Everything you need is minutes away — from metro connectivity to world-class schools, hospitals, business parks, and leisure destinations.</p>
             </div>
 
-            <div class="gallery-tabs reveal-up">
-                <button class="tab active">All</button>
-                <button class="tab">Exterior</button>
-                <button class="tab">Interior</button>
-                <button class="tab">Amenities</button>
-                <button class="tab">Landscape</button>
-            </div>
+            <!-- Grid -->
+            <div class="loc__grid reveal-up">
 
-            <div class="gallery-slider-wrap reveal-up">
-                <button class="nav-btn-circle prev"><i data-lucide="chevron-left"></i></button>
-                <div class="gallery-cards">
-                    <div class="gallery-card">
-                        <img src="luxury_interior_gallery_1_1778306518417.png" alt="Gallery 1">
-                    </div>
-                    <div class="gallery-card">
-                        <img src="luxury_apartment_banner_1778306486309.png" alt="Gallery 2">
-                    </div>
-                    <div class="gallery-card featured">
-                        <img src="luxury_night_exterior_1778309376797.png" alt="Gallery 3">
-                        <div class="play-icon"><i data-lucide="play"></i></div>
-                    </div>
-                    <div class="gallery-card">
-                        <img src="luxury_rooftop_deck_1778309392201.png" alt="Gallery 4">
-                    </div>
-                    <div class="gallery-card">
-                        <img src="luxury_amenities_pool_1778306763583.png" alt="Gallery 5">
-                    </div>
+                <!-- Col 1 -->
+                <div class="loc-col">
+                    <div class="loc-col__label"><i data-lucide="train-front"></i> Transit & Nature</div>
+                    <ul class="loc-list">
+                        <li class="loc-item">
+                            <span class="loc-item__dot"></span>
+                            <span class="loc-item__name">Metro Station</span>
+                            <span class="loc-item__time">2–3 mins</span>
+                        </li>
+                        <li class="loc-item">
+                            <span class="loc-item__dot"></span>
+                            <span class="loc-item__name">Aravalli Biodiversity Park</span>
+                            <span class="loc-item__time">5–8 mins</span>
+                        </li>
+                        <li class="loc-item">
+                            <span class="loc-item__dot"></span>
+                            <span class="loc-item__name">Global Business Park</span>
+                            <span class="loc-item__time">8–10 mins</span>
+                        </li>
+                    </ul>
                 </div>
-                <button class="nav-btn-circle next"><i data-lucide="chevron-right"></i></button>
+
+                <!-- Divider pin -->
+                <div class="loc__pin" aria-hidden="true">
+                    <div class="loc__pin-ring"></div>
+                    <div class="loc__pin-dot"></div>
+                    <i data-lucide="map-pin"></i>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="loc-col">
+                    <div class="loc-col__label"><i data-lucide="graduation-cap"></i> Education & Health</div>
+                    <ul class="loc-list">
+                        <li class="loc-item">
+                            <span class="loc-item__dot"></span>
+                            <span class="loc-item__name">DPS International</span>
+                            <span class="loc-item__time">10–12 mins</span>
+                        </li>
+                        <li class="loc-item">
+                            <span class="loc-item__dot"></span>
+                            <span class="loc-item__name">Fortis Memorial Research Institute</span>
+                            <span class="loc-item__time">15–18 mins</span>
+                        </li>
+                        <li class="loc-item">
+                            <span class="loc-item__dot"></span>
+                            <span class="loc-item__name">NH-48</span>
+                            <span class="loc-item__time">15–20 mins</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Divider pin -->
+                <div class="loc__pin" aria-hidden="true">
+                    <div class="loc__pin-ring"></div>
+                    <div class="loc__pin-dot"></div>
+                    <i data-lucide="map-pin"></i>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="loc-col">
+                    <div class="loc-col__label"><i data-lucide="shopping-bag"></i> Lifestyle & Travel</div>
+                    <ul class="loc-list">
+                        <li class="loc-item">
+                            <span class="loc-item__dot"></span>
+                            <span class="loc-item__name">Ambience Mall Gurgaon</span>
+                            <span class="loc-item__time">15–20 mins</span>
+                        </li>
+                        <li class="loc-item">
+                            <span class="loc-item__dot"></span>
+                            <span class="loc-item__name">DLF Cyber City</span>
+                            <span class="loc-item__time">15–20 mins</span>
+                        </li>
+                        <li class="loc-item">
+                            <span class="loc-item__dot"></span>
+                            <span class="loc-item__name">Indira Gandhi International Airport</span>
+                            <span class="loc-item__time">25–30 mins</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div><!-- /.loc__grid -->
+
+            <!-- Footer strip -->
+            <div class="loc__strip reveal-up">
+                <div class="loc-chip"><i data-lucide="navigation"></i><span>Sector 150, Gurugram</span></div>
+                <div class="loc-chip"><i data-lucide="wifi"></i><span>Smart Connectivity</span></div>
+                <div class="loc-chip"><i data-lucide="trees"></i><span>Green Surroundings</span></div>
+                <div class="loc-chip"><i data-lucide="plane"></i><span>Airport 25 Mins</span></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Amenities: High-Status Collections -->
+    <section id="amenities" class="amenities-unique" aria-label="Amenities">
+        <div class="container amenities-unique__inner">
+            <div class="amenities-unique__head reveal-up">
+                <span class="amenities-unique__kicker">EXCLUSIVITY</span>
+                <h2 class="amenities-unique__title">Amenities That Complement Your Status</h2>
+                <p class="amenities-unique__desc">Every space is a curated experience, designed for those who have arrived.</p>
+            </div>
+
+            <div class="amenities-grid-luxury reveal-up">
+                <!-- Social & Status -->
+                <div class="luxury-cat">
+                    <div class="luxury-cat__icon"><i data-lucide="gem"></i></div>
+                    <h3 class="luxury-cat__title">Social & Status</h3>
+                    <ul class="luxury-list">
+                        <li>Champagne Lounge</li>
+                        <li>Cigar Lounge</li>
+                        <li>Deal Maker’s Den</li>
+                        <li>Indoor Golf Simulator</li>
+                        <li>Ultra-luxury networking zones</li>
+                    </ul>
+                </div>
+
+                <!-- Wellness Clubhouse -->
+                <div class="luxury-cat">
+                    <div class="luxury-cat__icon"><i data-lucide="sparkles"></i></div>
+                    <h3 class="luxury-cat__title">Wellness Clubhouse</h3>
+                    <ul class="luxury-list">
+                        <li>Pilates Reformer Studio</li>
+                        <li>Indoor lap pool</li>
+                        <li>Holistic wellness spaces</li>
+                        <li>Rejuvenation zones</li>
+                    </ul>
+                </div>
+
+                <!-- Outdoor Indulgence -->
+                <div class="luxury-cat">
+                    <div class="luxury-cat__icon"><i data-lucide="sun"></i></div>
+                    <h3 class="luxury-cat__title">Outdoor Indulgence</h3>
+                    <span class="luxury-cat__sub">3 Acres of Landscape</span>
+                    <ul class="luxury-list">
+                        <li>Alfresco deck café by the pool</li>
+                        <li>Outdoor lap pool</li>
+                        <li>Resort-style luxury greens</li>
+                    </ul>
+                </div>
+
+                <!-- Private Forest Trail -->
+                <div class="luxury-cat">
+                    <div class="luxury-cat__icon"><i data-lucide="trees"></i></div>
+                    <h3 class="luxury-cat__title">Private Forest Trail</h3>
+                    <span class="luxury-cat__sub">1 Acre Curated Trail</span>
+                    <ul class="luxury-list">
+                        <li>A curated forest experience</li>
+                        <li>Rare serenity & urban escape</li>
+                        <li>Rooted in Mother Earth</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="amenities-unique__strip reveal-up">
+                <div class="amenities-chip"><i data-lucide="check-circle"></i><span>Premium finishes</span></div>
+                <div class="amenities-chip"><i data-lucide="map-pin"></i><span>Prime Golf Course Road</span></div>
+                <div class="amenities-chip"><i data-lucide="shield-check"></i><span>Elite Security</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creative Gallery -->
+    <section id="gallery" class="gallery-creative" aria-label="Gallery">
+        <div class="gallery-creative__bg" aria-hidden="true"></div>
+        <div class="container gallery-creative__inner">
+            <div class="gallery-creative__head reveal-up">
+                <span class="gallery-creative__kicker">THE VISUAL EXPERIENCE</span>
+                <h2 class="gallery-creative__title">Walk Into a Life<br>Designed for the Ambitious</h2>
+                <p class="gallery-creative__desc">A curated visual journey of architecture, lifestyle spaces, and premium amenities.</p>
+            </div>
+
+            <div class="gallery-creative__mosaic reveal-up revealed">
+                <figure class="gc-card gc-card--large">
+                    <img src="luxury_night_exterior_1778309376797.png" alt="Night exterior view" loading="lazy" decoding="async">
+                    <figcaption class="gc-card__caption">Night Exterior</figcaption>
+                </figure>
+                <figure class="gc-card">
+                    <img src="luxury_rooftop_deck_1778309392201.png" alt="Rooftop deck view" loading="lazy" decoding="async">
+                    <figcaption class="gc-card__caption">Rooftop Deck</figcaption>
+                </figure>
+                <figure class="gc-card">
+                    <img src="luxury_amenities_pool_1778306763583.png" alt="Pool amenities view" loading="lazy" decoding="async">
+                    <figcaption class="gc-card__caption">Pool Lounge</figcaption>
+                </figure>
+                <figure class="gc-card gc-card--tall">
+                    <img src="luxury_interior_gallery_1_1778306518417.png" alt="Interior gallery view" loading="lazy" decoding="async">
+                    <figcaption class="gc-card__caption">Designer Interiors</figcaption>
+                </figure>
+                <figure class="gc-card gc-card--wide">
+                    <img src="luxury_apartment_banner_1778306486309.png" alt="Lifestyle view" loading="lazy" decoding="async">
+                    <figcaption class="gc-card__caption">Lifestyle Spaces</figcaption>
+                </figure>
+            </div>
+
+            <div class="gallery-creative__strip reveal-up revealed">
+                <span>Night exterior</span>
+                <span>Rooftop lounge</span>
+                <span>Club amenities</span>
+                <span>Designer interiors</span>
+                <span>Premium lifestyle</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flow columns showcase (after banner, light) -->
+    <section class="flow-showcase" aria-label="Lifestyle imagery">
+        <div class="container flow-showcase__container">
+            <h2 class="flow-showcase__title">Godrej Samaris</h2>
+            <h2 class="flow-showcase__title flow-showcase__title--large">Godrej Samaris</h2>
+
+            <div class="flow-showcase__columns">
+                <div id="flow-img-1" class="flow-img-container">
+                    <img class="flow-img" src="luxury_night_exterior_1778309376797.png" alt=""
+                        width="170" height="800" loading="lazy" decoding="async">
+                </div>
+                <div class="flow-img-container flow-second-animation">
+                    <img class="flow-img" src="luxury_rooftop_deck_1778309392201.png" alt=""
+                        width="170" height="800" loading="lazy" decoding="async">
+                </div>
+                <div class="flow-img-container flow-third-animation">
+                    <img class="flow-img" src="luxury_amenities_pool_1778306763583.png" alt=""
+                        width="170" height="800" loading="lazy" decoding="async">
+                </div>
+                <div class="flow-img-container flow-fourth-animation">
+                    <img class="flow-img" src="luxury_interior_gallery_1_1778306518417.png" alt=""
+                        width="170" height="800" loading="lazy" decoding="async">
+                </div>
+                <div class="flow-img-container flow-fifth-animation">
+                    <img class="flow-img" src="luxury_apartment_banner_1778306486309.png" alt=""
+                        width="170" height="800" loading="lazy" decoding="async">
+                </div>
+                <div id="flow-img-6" class="flow-img-container flow-sixth-animation">
+                    <img class="flow-img" src="luxury_night_exterior_1778309376797.png" alt=""
+                        width="170" height="800" loading="lazy" decoding="async">
+                </div>
+                <div id="flow-img-7" class="flow-img-container flow-seventh-animation">
+                    <img class="flow-img" src="luxury_rooftop_deck_1778309392201.png" alt=""
+                        width="170" height="800" loading="lazy" decoding="async">
+                </div>
             </div>
         </div>
     </section>
@@ -288,42 +484,41 @@
         <div class="container">
             <div class="footer-top reveal-up">
                 <div class="footer-cta">
-                    <h2>YOUR DREAM SPACE <br>IS JUST A STEP AWAY</h2>
-                    <p class="footer-short">Share your details in the top enquiry form, or reach us directly.</p>
+                    <h2>Call now and claim the last <br>premium address on Golf Course Road.</h2>
+                    <p class="footer-short">Experience the pinnacle of luxury with Godrej Samaris.</p>
                     <div class="footer-stats">
                         <div class="f-stat">
                             <i data-lucide="map-pin"></i>
                             <div>
-                                <h4>Prime Location</h4>
-                                <p>Sector 150, Noida</p>
+                                <h4>Golf Course Road</h4>
+                                <p>Prime Location</p>
                             </div>
                         </div>
                         <div class="f-stat">
                             <i data-lucide="sparkles"></i>
                             <div>
-                                <h4>Luxury Living</h4>
+                                <h4>Signature Living</h4>
                                 <p>Elite Community</p>
                             </div>
                         </div>
                         <div class="f-stat">
                             <i data-lucide="trending-up"></i>
                             <div>
-                                <h4>Smart Investment</h4>
-                                <p>High Returns</p>
+                                <h4>Exclusive Assets</h4>
+                                <p>High Value Appreciation</p>
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="footer-contacts" aria-label="Contact details">
                         <a class="footer-contact" href="tel:+911234567890"><i data-lucide="phone"></i><span>+91 12345 67890</span></a>
-                        <a class="footer-contact" href="mailto:info@godrejtycoon.com"><i data-lucide="mail"></i><span>info@godrejtycoon.com</span></a>
-                        <div class="footer-contact footer-contact-static"><i data-lucide="map-pin"></i><span>Sector 150, Noida</span></div>
+                        <a class="footer-contact" href="mailto:info@godrejsamaris.com"><i data-lucide="mail"></i><span>info@godrejsamaris.com</span></a>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>© 2024 Your Project Name. All Rights Reserved.</p>
+                <p>© 2024 Godrej Samaris. All Rights Reserved.</p>
                 <div class="social-links">
                     <a href="#"><i data-lucide="facebook"></i></a>
                     <a href="#"><i data-lucide="instagram"></i></a>
