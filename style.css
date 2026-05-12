@@ -2143,10 +2143,6 @@ h4 {
     transition: var(--transition);
 }
 
-.header.scrolled .logo-icon {
-    filter: brightness(0.5);
-    /* Make gold logo darker if needed, or keep it */
-}
 
 .nav a {
     color: #fff;
