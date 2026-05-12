@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --primary: #C5A059;
     --primary-light: #E5C17B;
     --primary-dark: #A68045;
@@ -116,6 +116,15 @@ body.footer-only-page .header.scrolled .nav-cta {
     align-items: center;
     background: #000;
     overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 80px; /* Room for absolute stats strip */
+        display: block; /* Stack content normally */
+    }
 }
 
 .hero__bg {
@@ -354,17 +363,26 @@ body.footer-only-page .header.scrolled .nav-cta {
 
 @media (max-width: 768px) {
     .h-stats {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row; /* Keep row for better space usage if possible or use grid */
+        justify-content: space-around;
+        gap: 10px;
     }
 
     .h-stat-sep {
-        display: none;
+        display: block;
+        opacity: 0.2;
     }
 
     .hero__stats-strip {
-        position: relative;
-        padding: 40px 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 15;
     }
 }
 
@@ -578,8 +596,8 @@ body.footer-only-page .header.scrolled .nav-cta {
     .hero__inner {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 60px;
-        padding: 120px 0 80px;
+        gap: 40px; /* Reduced gap */
+        padding: 100px 0 60px; /* Adjusted padding */
     }
 
     .hero__content {
@@ -591,6 +609,7 @@ body.footer-only-page .header.scrolled .nav-cta {
     .hero__sub {
         margin-left: auto;
         margin-right: auto;
+        max-width: 600px;
     }
 
     .hero__actions {
@@ -604,21 +623,54 @@ body.footer-only-page .header.scrolled .nav-cta {
 
     .hero__form-card {
         margin: 0 auto;
+        width: 100%;
+        max-width: 440px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero__title {
+        font-size: clamp(34px, 10vw, 48px); /* Responsive title size */
+    }
+
+    .hero__sub {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .hero__inner {
+        padding: 80px 0 40px;
+        gap: 30px;
+    }
+
+    .hero__form-main {
+        padding: 24px 20px 20px; /* Tighter padding on mobile */
+    }
+
+    .hero__form-footer {
+        padding: 12px 20px;
     }
 }
 
 @media (max-width: 600px) {
     .hero__form-card {
-        padding: 30px 20px;
+        /* Remove redundant padding here, it's handled by __form-main */
+        padding: 0; 
     }
 
     .hero__actions {
         flex-direction: column;
+        width: 100%;
+        gap: 12px;
     }
 
     .hero__btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .hero__form-title {
+        font-size: 28px;
     }
 }
 
