@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 const btn = form.querySelector('button');
                 const originalContent = btn.innerHTML;
-                
+
                 btn.innerHTML = 'SENDING...';
                 btn.disabled = true;
 
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     lucide.createIcons();
                     btn.style.background = '#059669'; // Success green
                     form.reset();
-                    
+
                     setTimeout(() => {
                         btn.innerHTML = originalContent;
                         btn.style.background = '';
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
                 window.scrollTo({
                     top: targetElement.offsetTop - 50,
@@ -152,6 +152,101 @@ document.addEventListener('DOMContentLoaded', () => {
             amenitiesContainer.scrollBy({ left: -200, behavior: 'smooth' });
         });
     }
+
+    // Traveling Map Interactions
+    const mapNodes = document.querySelectorAll('.map-node');
+    const navButtons = document.querySelectorAll('.map-nav-btn');
+    const routePaths = document.querySelectorAll('.route-path');
+
+    const updateMapState = (targetId) => {
+        // Update Nodes
+        mapNodes.forEach(node => {
+            if (node.dataset.target === targetId) {
+                node.classList.add('active');
+            } else {
+                node.classList.remove('active');
+            }
+        });
+
+        // Update Buttons
+        navButtons.forEach(btn => {
+            if (btn.dataset.node === targetId) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        // Trigger Path Drawing (Example logic)
+        routePaths.forEach(path => {
+            path.classList.remove('active');
+            // Force reflow
+            void path.offsetWidth;
+            path.classList.add('active');
+        });
+    };
+
+    mapNodes.forEach(node => {
+        node.addEventListener('click', () => {
+            updateMapState(node.dataset.target);
+        });
+    });
+
+    navButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            updateMapState(btn.dataset.node);
+        });
+    });
+
+    // Category Filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const allPaths = document.querySelectorAll('.route-path, .route-marking');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.dataset.filter;
+            
+            // Update Filter Buttons
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Filter Map Nodes
+            mapNodes.forEach(node => {
+                if (filter === 'all' || node.dataset.category === filter || node.dataset.target === 'project') {
+                    node.style.display = 'block';
+                } else {
+                    node.style.display = 'none';
+                }
+            });
+
+            // Filter Road Paths
+            allPaths.forEach(path => {
+                if (filter === 'all' || path.dataset.category === filter) {
+                    path.style.display = 'block';
+                } else {
+                    path.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Auto-trigger on reveal
+    const travelSection = document.querySelector('.travel-map');
+    if (travelSection) {
+        const travelObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    travelSection.classList.add('revealed');
+                    routePaths.forEach(path => path.classList.add('active'));
+                    if (window.lucide) window.lucide.createIcons();
+                    travelObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        travelObserver.observe(travelSection);
+    }
+
+    if (window.lucide) window.lucide.createIcons();
 
     // Creative gallery reveal on scroll
     const creativeGallery = document.querySelector('.gallery-creative');

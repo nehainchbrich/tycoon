@@ -486,6 +486,306 @@
         </div>
     </section>
 
+    <!-- Traveling Map Section: High-Fidelity Motion Graphics Style -->
+    <section class="travel-map" id="location-guide">
+        <div class="container travel-map__inner">
+            <div class="travel-map__head reveal-up">
+                <span class="travel-map__kicker">NEIGHBORHOOD GUIDE</span>
+                <h2 class="travel-map__title">Everything Within Reach</h2>
+                <p class="travel-map__desc">Explore the nearby landmarks that make Godrej Samaris the most connected
+                    address on Golf Course Road.</p>
+
+                <!-- Category Filters -->
+                <div class="travel-map__filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="transit">Transit</button>
+                    <button class="filter-btn" data-filter="education">Education</button>
+                    <button class="filter-btn" data-filter="health">Health</button>
+                    <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
+                </div>
+            </div>
+
+            <div class="travel-map__wrapper">
+                <div class="travel-map__perspective">
+                    <!-- Cinematic Globe Intro Overlay -->
+                    <div class="globe-intro">
+                        <div class="globe-intro__sphere"></div>
+                        <div class="globe-intro__glow"></div>
+                    </div>
+
+                    <!-- India Map Background -->
+                    <div class="travel-map__india-bg">
+                        <svg viewBox="0 0 800 900" preserveAspectRatio="xMidYMid meet">
+                            <path d="M433.2,143.2 C433.2,143.2 431.1,146.5 427.8,146.5 C424.5,146.5 421.2,143.2 421.2,143.2 L414.6,133.3 C414.6,133.3 408.1,126.8 404.8,126.8 C401.5,126.8 395,133.3 395,133.3 L381.9,143.2 C381.9,143.2 375.3,149.7 375.3,153 C375.3,156.3 381.9,162.9 381.9,162.9 L395,169.4 C395,169.4 401.5,172.7 401.5,176 C401.5,179.3 398.2,185.8 398.2,185.8 L391.7,195.6 C391.7,195.6 385.1,205.5 385.1,212 C385.1,218.5 391.7,228.4 391.7,228.4 L398.2,238.2 C398.2,238.2 404.8,248.1 411.3,248.1 C417.8,248.1 427.7,238.2 427.7,238.2 L437.5,231.7 C437.5,231.7 447.4,225.1 453.9,225.1 C460.4,225.1 470.2,231.7 470.2,231.7 L483.3,238.2 C483.3,238.2 493.2,244.8 499.7,244.8 C506.2,244.8 516,238.2 516,238.2 L525.9,228.4 C525.9,228.4 532.4,218.5 532.4,212 C532.4,205.5 525.9,195.6 525.9,195.6 L519.3,185.8 C519.3,185.8 516,179.3 516,176 C516,172.7 519.3,166.1 519.3,166.1 L529.2,156.3 C529.2,156.3 535.7,149.7 535.7,146.4 C535.7,143.1 529.2,136.5 529.2,136.5 L516,130 C516,130 506.2,123.4 499.7,123.4 C493.2,123.4 483.3,130 483.3,130 L470.2,136.5 C470.2,136.5 460.4,143.1 453.9,143.1 C447.4,143.1 433.2,143.2 433.2,143.2 Z" fill="rgba(197, 160, 89, 0.05)" />
+                            <!-- Simplified outline of India -->
+                            <path d="M400,50 L450,100 L500,150 L550,200 L600,250 L650,300 L700,350 L750,400 L700,450 L650,500 L600,550 L550,600 L500,650 L450,700 L400,850 L350,700 L300,650 L250,600 L200,550 L150,500 L100,450 L50,400 L100,350 L150,300 L200,250 L250,200 L300,150 L350,100 Z" fill="none" stroke="rgba(197, 160, 89, 0.08)" stroke-width="2" />
+                        </svg>
+                    </div>
+
+                    <!-- Tilted Map Surface -->
+                    <div class="travel-map__surface">
+                        <div class="travel-map__grid"></div>
+
+                        <!-- Background Road Network -->
+                        <svg class="travel-map__roads" viewBox="0 0 1000 700">
+                            <!-- Arterial Roads (Horizontal) -->
+                            <path class="road-bg" d="M0,450 L1000,450" />
+                            <path class="road-bg" d="M0,150 L1000,150" />
+                            <path class="road-bg" d="M0,300 L1000,300" />
+                            <path class="road-bg" d="M0,600 L1000,600" />
+                            
+                            <!-- Arterial Roads (Vertical) -->
+                            <path class="road-bg" d="M100,0 L100,700" />
+                            <path class="road-bg" d="M400,0 L400,700" />
+                            <path class="road-bg" d="M700,0 L700,700" />
+                            <path class="road-bg" d="M250,0 L250,700" />
+                            <path class="road-bg" d="M550,0 L550,700" />
+                            <path class="road-bg" d="M850,0 L850,700" />
+
+                            <!-- Main Highway -->
+                            <path class="road-main" d="M0,500 C 300,500 500,200 1000,200" />
+                            <path class="road-main" d="M200,700 L800,0" />
+                            
+                            <!-- Urban Building Clusters -->
+                            <g class="map-buildings" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)">
+                                <rect x="120" y="460" width="20" height="30" />
+                                <rect x="150" y="470" width="15" height="20" />
+                                <rect x="420" y="320" width="25" height="40" />
+                                <rect x="460" y="310" width="20" height="30" />
+                                <rect x="720" y="100" width="30" height="50" />
+                                <rect x="760" y="120" width="20" height="30" />
+                            </g>
+                        </svg>
+
+                        <!-- Routes (Grid Following Roads) -->
+                        <svg class="travel-map__routes" viewBox="0 0 1000 700">
+                            <!-- Metro (L-Shape) -->
+                            <path class="route-path active" d="M100,450 L100,400 L200,400" data-category="transit" />
+                            <path class="route-marking active" d="M100,450 L100,400 L200,400" data-category="transit" />
+                            
+                            <!-- Airport (Grid Following) -->
+                            <path class="route-path active" d="M100,450 L100,150 L150,150" data-category="transit" />
+                            <path class="route-marking active" d="M100,450 L100,150 L150,150" data-category="transit" />
+                            
+                            <!-- School -->
+                            <path class="route-path active" d="M100,450 L350,450 L350,250" data-category="education" />
+                            <path class="route-marking active" d="M100,450 L350,450 L350,250" data-category="education" />
+                            
+                            <!-- Hospital -->
+                            <path class="route-path active" d="M100,450 L550,450 L550,500" data-category="health" />
+                            <path class="route-marking active" d="M100,450 L550,450 L550,500" data-category="health" />
+                            
+                            <!-- Mall -->
+                            <path class="route-path active" d="M100,450 L100,200 L650,200" data-category="lifestyle" />
+                            <path class="route-marking active" d="M100,450 L100,200 L650,200" data-category="lifestyle" />
+                            
+                            <!-- Cyber City -->
+                            <path class="route-path active" d="M100,450 L750,450 L750,400" data-category="lifestyle" />
+                            <path class="route-marking active" d="M100,450 L750,450 L750,400" data-category="lifestyle" />
+
+                            <!-- Huda City Center -->
+                            <path class="route-path active" d="M100,450 L850,450 L850,150" data-category="transit" />
+                            <path class="route-marking active" d="M100,450 L850,450 L850,150" data-category="transit" />
+                            
+                            <!-- Horizon Center -->
+                            <path class="route-path active" d="M100,450 L100,100 L450,100" data-category="lifestyle" />
+                            <path class="route-marking active" d="M100,450 L100,100 L450,100" data-category="lifestyle" />
+                        </svg>
+
+                        <!-- Comet Particles (Flowing) -->
+                        <g class="map-comets">
+                            <path class="map-comet" d="M100,450 L200,400" />
+                            <path class="map-comet" d="M100,450 L150,150" />
+                            <path class="map-comet" d="M100,450 L650,200" />
+                            <path class="map-comet" d="M100,450 L850,150" />
+                        </g>
+
+                        <!-- Special Animated Entities (Metro/Cars) -->
+                        <g class="map-entities">
+                            <circle class="entity-metro" r="4" fill="#fff">
+                                <animateMotion dur="4s" repeatCount="indefinite" path="M100,450 L200,400" />
+                            </circle>
+                            <circle class="entity-car" r="3" fill="var(--primary)">
+                                <animateMotion dur="3s" repeatCount="indefinite" path="M100,450 L650,200" />
+                            </circle>
+                        </g>
+                    </svg>
+
+                    <!-- Nodes (Categorized) -->
+                    <div class="map-node node-project active" style="left: 100px; top: 450px;" data-category="all"
+                        data-target="project">
+                        <div class="node-ring"></div>
+                        <div class="node-dot"></div>
+                        <div class="node-popup">
+                            <img src="luxury_night_exterior_1778309376797.png" alt="Godrej Samaris">
+                            <h5>GODREJ SAMARIS</h5>
+                            <span>The Epicenter</span>
+                        </div>
+                    </div>
+
+                    <!-- Transit -->
+                    <div class="map-node node-landmark" style="left: 200px; top: 400px;" data-category="transit"
+                        data-target="metro">
+                        <div class="node-ring"></div>
+                        <div class="node-dot"><i data-lucide="train-front"></i></div>
+                        <div class="node-label">RAPID METRO</div>
+                        <div class="node-popup">
+                            <h5>Rapid Metro</h5>
+                            <span>3 Mins Away</span>
+                        </div>
+                    </div>
+
+                    <div class="map-node node-landmark" style="left: 150px; top: 150px;" data-category="transit"
+                        data-target="airport">
+                        <div class="node-ring"></div>
+                        <div class="node-dot"><i data-lucide="plane"></i></div>
+                        <div class="node-label">IGI AIRPORT</div>
+                        <div class="node-popup">
+                            <h5>IGI Airport</h5>
+                            <span>25 Mins Drive</span>
+                        </div>
+                    </div>
+
+                    <div class="map-node node-landmark" style="left: 850px; top: 150px;" data-category="transit"
+                        data-target="huda">
+                        <div class="node-ring"></div>
+                        <div class="node-dot"><i data-lucide="train-track"></i></div>
+                        <div class="node-label">HUDA CITY CENTER</div>
+                        <div class="node-popup">
+                            <h5>Huda City Center</h5>
+                            <span>12 Mins Away</span>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="map-node node-landmark" style="left: 350px; top: 250px;" data-category="education"
+                        data-target="school">
+                        <div class="node-ring"></div>
+                        <div class="node-dot"><i data-lucide="graduation-cap"></i></div>
+                        <div class="node-label">DPS SCHOOL</div>
+                        <div class="node-popup">
+                            <h5>DPS International</h5>
+                            <span>10 Mins Away</span>
+                        </div>
+                    </div>
+
+                    <!-- Health -->
+                    <div class="map-node node-landmark" style="left: 550px; top: 500px;" data-category="health"
+                        data-target="hospital">
+                        <div class="node-ring"></div>
+                        <div class="node-dot"><i data-lucide="cross"></i></div>
+                        <div class="node-label">FORTIS</div>
+                        <div class="node-popup">
+                            <h5>Fortis Hospital</h5>
+                            <span>15 Mins Away</span>
+                        </div>
+                    </div>
+
+                    <div class="map-node node-landmark" style="left: 900px; top: 500px;" data-category="health"
+                        data-target="medanta">
+                        <div class="node-ring"></div>
+                        <div class="node-dot"><i data-lucide="cross"></i></div>
+                        <div class="node-label">MEDANTA</div>
+                        <div class="node-popup">
+                            <h5>Medanta Medicity</h5>
+                            <span>20 Mins Away</span>
+                        </div>
+                    </div>
+
+                    <!-- Lifestyle -->
+                    <div class="map-node node-landmark" style="left: 650px; top: 200px;" data-category="lifestyle"
+                        data-target="mall">
+                        <div class="node-ring"></div>
+                        <div class="node-dot"><i data-lucide="shopping-bag"></i></div>
+                        <div class="node-label">AMBIENCE MALL</div>
+                        <div class="node-popup">
+                            <h5>Ambience Mall</h5>
+                            <span>10 Mins Away</span>
+                        </div>
+                    </div>
+
+                    <div class="map-node node-landmark" style="left: 750px; top: 400px;" data-category="lifestyle"
+                        data-target="cyber">
+                        <div class="node-ring"></div>
+                        <div class="node-dot"><i data-lucide="building-2"></i></div>
+                        <div class="node-label">CYBER CITY</div>
+                        <div class="node-popup">
+                            <h5>DLF Cyber City</h5>
+                            <span>15 Mins Away</span>
+                        </div>
+                    </div>
+
+                    <div class="map-node node-landmark" style="left: 450px; top: 100px;" data-category="lifestyle"
+                        data-target="horizon">
+                        <div class="node-ring"></div>
+                        <div class="node-dot"><i data-lucide="building"></i></div>
+                        <div class="node-label">HORIZON CENTER</div>
+                        <div class="node-popup">
+                            <h5>One Horizon Center</h5>
+                            <span>5 Mins Away</span>
+                        </div>
+                    </div>
+
+                    <!-- NEW LOCATIONS -->
+                    <div class="map-node node-landmark" style="left: 300px; top: 100px;" data-category="lifestyle"
+                        data-target="global">
+                        <div class="node-ring"></div>
+                        <div class="node-dot"><i data-lucide="building-2"></i></div>
+                        <div class="node-label">GLOBAL BUSINESS PARK</div>
+                        <div class="node-popup">
+                            <h5>Global Business Park</h5>
+                            <span>8 Mins Away</span>
+                        </div>
+                    </div>
+
+                    <div class="map-node node-landmark" style="left: 450px; top: 350px;" data-category="lifestyle"
+                        data-target="park">
+                        <div class="node-ring"></div>
+                        <div class="node-dot"><i data-lucide="trees"></i></div>
+                        <div class="node-label">BIODIVERSITY PARK</div>
+                        <div class="node-popup">
+                            <h5>Aravalli Biodiversity Park</h5>
+                            <span>5 Mins Away</span>
+                        </div>
+                    </div>
+
+                    <div class="map-node node-landmark" style="left: 800px; top: 450px;" data-category="education"
+                        data-target="shiv">
+                        <div class="node-ring"></div>
+                        <div class="node-dot"><i data-lucide="graduation-cap"></i></div>
+                        <div class="node-label">SHIV NADAR SCHOOL</div>
+                        <div class="node-popup">
+                            <h5>Shiv Nadar School</h5>
+                            <span>12 Mins Away</span>
+                        </div>
+                    </div>
+
+                    <div class="map-node node-landmark" style="left: 500px; top: 600px;" data-category="lifestyle"
+                        data-target="south">
+                        <div class="node-ring"></div>
+                        <div class="node-dot"><i data-lucide="shopping-bag"></i></div>
+                        <div class="node-label">SOUTH POINT MALL</div>
+                        <div class="node-popup">
+                            <h5>South Point Mall</h5>
+                            <span>2 Mins Away</span>
+                        </div>
+                    </div>
+
+                    <div class="map-node node-landmark" style="left: 200px; top: 600px;" data-category="health"
+                        data-target="paras">
+                        <div class="node-ring"></div>
+                        <div class="node-dot"><i data-lucide="cross"></i></div>
+                        <div class="node-label">PARAS HOSPITAL</div>
+                        <div class="node-popup">
+                            <h5>Paras Hospital</h5>
+                            <span>10 Mins Away</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer / Contact -->
     <footer id="contact" class="footer-section">
         <div class="container">
