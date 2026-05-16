@@ -125,16 +125,6 @@ body.footer-only-page .header.scrolled .nav-cta {
     overflow: hidden;
 }
 
-@media (max-width: 768px) {
-    .hero {
-        height: auto;
-        min-height: 100vh;
-        padding-bottom: 80px;
-        /* Room for absolute stats strip */
-        display: block;
-        /* Stack content normally */
-    }
-}
 
 .hero__bg {
     position: absolute;
@@ -644,28 +634,61 @@ body.footer-only-page .header.scrolled .nav-cta {
 }
 
 @media (max-width: 768px) {
-    .hero__title {
-        font-size: clamp(34px, 10vw, 48px);
-        /* Responsive title size */
-    }
-
-    .hero__sub {
-        font-size: 14px;
-        line-height: 1.6;
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 120px 0 80px;
     }
 
     .hero__inner {
-        padding: 80px 0 40px;
-        gap: 30px;
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+        padding: 0;
+    }
+
+    .hero__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero__title {
+        font-size: clamp(34px, 10vw, 48px);
+        letter-spacing: -1px;
+    }
+
+    .hero__divider {
+        margin: 0 auto 24px;
+    }
+
+    .hero__form-card {
+        margin: 0 auto;
+        max-width: 400px;
     }
 
     .hero__form-main {
         padding: 24px 20px 20px;
-        /* Tighter padding on mobile */
     }
 
     .hero__form-footer {
         padding: 12px 20px;
+    }
+
+    .h-stats {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .h-stat-sep {
+        display: none;
+    }
+
+    .hero__scroll {
+        bottom: 30px;
     }
 }
 
@@ -1754,8 +1777,8 @@ body.footer-only-page .header.scrolled .nav-cta {
 .gallery-creative {
     position: relative;
     padding: clamp(80px, 10vw, 120px) 0;
-    background: #fdfcf9;
-    /* Light theme background */
+    background: #0c1421;
+    /* Ultra Dark Premium Background */
     overflow: hidden;
 }
 
@@ -1786,28 +1809,27 @@ body.footer-only-page .header.scrolled .nav-cta {
     letter-spacing: 4px;
     text-transform: uppercase;
     color: var(--primary);
-    /* Gold kicker on light */
     padding: 8px 16px;
     border-radius: 999px;
-    border: 1px solid rgba(197, 160, 89, 0.25);
-    background: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .gallery-creative__title {
     margin-top: 18px;
     font-size: clamp(34px, 5vw, 62px);
     line-height: 1.1;
-    color: #1a1a1a;
-    /* Dark title */
+    color: #fff;
+    /* High-contrast white for dark theme */
     font-weight: 500;
 }
 
 .gallery-creative__desc {
     margin: 15px auto 0;
     max-width: 680px;
-    color: #555;
-    /* Medium grey description */
+    color: rgba(255, 255, 255, 0.6);
+    /* Muted white description */
     font: 400 16px/1.8 "Montserrat", sans-serif;
 }
 
@@ -1821,11 +1843,12 @@ body.footer-only-page .header.scrolled .nav-cta {
 .gc-card {
     margin: 0;
     position: relative;
-    border-radius: 20px;
+    border-radius: 24px;
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    background: #fff;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Subtle light border */
+    background: #111b2d;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     min-height: 220px;
     transition: transform 450ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 450ms cubic-bezier(0.16, 1, 0.3, 1), border-color 450ms cubic-bezier(0.16, 1, 0.3, 1), opacity 800ms cubic-bezier(0.16, 1, 0.3, 1);
     opacity: 0;
@@ -1845,7 +1868,7 @@ body.footer-only-page .header.scrolled .nav-cta {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 35%, rgba(0, 0, 0, 0.45) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.8) 100%);
     pointer-events: none;
     z-index: 1;
 }
@@ -4487,4 +4510,1787 @@ h4 {
     .about-title::after {
         width: 110px;
     }
+}
+
+/* ==========================================
+   NEIGHBORHOOD GUIDE - Premium Map Section
+   ========================================== */
+.ng {
+    padding: 100px 0;
+    background: #fff;
+    color: #1a1a1a;
+    overflow: hidden;
+}
+
+.ng__head {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.ng__kicker {
+    display: block;
+    font: 700 12px/1 "Montserrat", sans-serif;
+    letter-spacing: 4px;
+    color: var(--primary);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.ng__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 500;
+    color: #0c1a1a;
+    margin-bottom: 20px;
+}
+
+.ng__desc {
+    font-size: 16px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ng__filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.ng__filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 99px;
+    background: #f8f8f8;
+    border: 1px solid #eee;
+    font: 600 13px/1 "Montserrat", sans-serif;
+    color: #444;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.ng__filter i {
+    width: 16px;
+    height: 16px;
+}
+
+.ng__filter:hover {
+    background: #fff;
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.ng__filter.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
+}
+
+.ng__main {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+    background: #fff;
+    border-radius: 40px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    position: relative;
+}
+
+@media (max-width: 1024px) {
+    .ng__main {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ng__sidebar {
+    background: #0c1421;
+    color: #fff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ng__sidebar-head {
+    margin-bottom: 40px;
+}
+
+.ng__sidebar-title {
+    font: 700 13px/1.4 "Montserrat", sans-serif;
+    letter-spacing: 2px;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.ng__sidebar-sub {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.ng__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ng__item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: var(--transition);
+}
+
+.ng__item:last-child {
+    border-bottom: none;
+}
+
+.ng__item-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.ng__item-icon i {
+    width: 20px;
+    height: 20px;
+}
+
+.ng__item-info {
+    flex-grow: 1;
+}
+
+.ng__item-name {
+    display: block;
+    font: 700 14px/1 "Montserrat", sans-serif;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.ng__item-area {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.ng__item-time {
+    text-align: right;
+}
+
+.ng__item-val {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--primary);
+}
+
+.ng__item-unit {
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 1px;
+}
+
+.ng__map-container {
+    background: #fdfaf5;
+    position: relative;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ng__map-canvas {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+.ng__map-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.ng__marker {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.ng__marker--project {
+    z-index: 10;
+}
+
+.ng__marker-card {
+    background: #0c1421;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--primary);
+    white-space: nowrap;
+}
+
+.ng__marker-logo img {
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.ng__marker-name {
+    font: 700 11px/1 "Montserrat", sans-serif;
+    letter-spacing: 1px;
+}
+
+.ng__marker-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: markerPulse 2s infinite;
+    z-index: -1;
+}
+
+@keyframes markerPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.ng__marker-label {
+    background: #fff;
+    padding: 8px 14px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+.ng__marker-label i {
+    width: 14px;
+    height: 14px;
+    color: var(--primary);
+}
+
+.ng__marker-label span {
+    font: 700 10px/1.2 "Montserrat", sans-serif;
+    color: #333;
+}
+
+.ng__marker-label small {
+    font-size: 8px;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.ng__marker:hover .ng__marker-label {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.ng__summary {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 24px;
+    background: #0c1421;
+    border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .ng__summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.ng__summary-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.ng__summary-item i {
+    width: 24px;
+    height: 24px;
+    color: var(--primary);
+    opacity: 0.8;
+}
+
+.ng__summary-item h4 {
+    font: 700 11px/1.4 "Montserrat", sans-serif;
+    color: #fff;
+    margin-bottom: 2px;
+}
+
+.ng__summary-item p {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.ng__summary-sep {
+    width: 1px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    align-self: center;
+}
+
+@media (max-width: 768px) {
+    .ng__summary-sep {
+        display: none;
+    }
+}
+
+.ng__footer {
+    margin-top: 40px;
+    text-align: center;
+    font: 600 12px/1 "Montserrat", sans-serif;
+    color: #999;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.ng__footer i {
+    width: 14px;
+    height: 14px;
+    color: var(--primary);
+}
+
+/* Mobile Fixes for Neighborhood Guide */
+@media (max-width: 600px) {
+    .ng__filters {
+        gap: 8px;
+    }
+
+    .ng__filter {
+        padding: 8px 16px;
+        font-size: 11px;
+    }
+
+    .ng__sidebar {
+        padding: 30px 20px;
+    }
+
+    .ng__map-container {
+        padding: 15px;
+    }
+
+    .ng__map-canvas {
+        aspect-ratio: 4 / 3;
+    }
+
+    .ng__marker-card {
+        padding: 6px 12px;
+    }
+
+    .ng__marker-label {
+        padding: 6px 10px;
+    }
+
+    .ng__marker-label span {
+        font-size: 8px;
+    }
+
+    .ng__summary {
+        padding: 15px;
+        gap: 10px;
+    }
+}
+
+/* ==========================================
+   NEIGHBORHOOD GUIDE - Premium Map Section
+   ========================================== */
+.ng {
+    padding: 100px 0;
+    background: #fff;
+    color: #1a1a1a;
+    overflow: hidden;
+}
+
+.ng__head {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.ng__kicker {
+    display: block;
+    font: 700 12px/1 "Montserrat", sans-serif;
+    letter-spacing: 4px;
+    color: var(--primary);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.ng__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 500;
+    color: #0c1a1a;
+    margin-bottom: 20px;
+}
+
+.ng__desc {
+    font-size: 16px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ng__filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.ng__filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 99px;
+    background: #f8f8f8;
+    border: 1px solid #eee;
+    font: 600 13px/1 "Montserrat", sans-serif;
+    color: #444;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.ng__filter i {
+    width: 16px;
+    height: 16px;
+}
+
+.ng__filter:hover {
+    background: #fff;
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.ng__filter.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
+}
+
+.ng__main {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+    background: #fff;
+    border-radius: 40px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    position: relative;
+}
+
+@media (max-width: 1024px) {
+    .ng__main {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ng__sidebar {
+    background: #0c1421;
+    color: #fff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ng__sidebar-head {
+    margin-bottom: 40px;
+}
+
+.ng__sidebar-title {
+    font: 700 13px/1.4 "Montserrat", sans-serif;
+    letter-spacing: 2px;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.ng__sidebar-sub {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.ng__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ng__item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: var(--transition);
+}
+
+.ng__item:last-child {
+    border-bottom: none;
+}
+
+.ng__item-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.ng__item-icon i {
+    width: 20px;
+    height: 20px;
+}
+
+.ng__item-info {
+    flex-grow: 1;
+}
+
+.ng__item-name {
+    display: block;
+    font: 700 14px/1 "Montserrat", sans-serif;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.ng__item-area {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.ng__item-time {
+    text-align: right;
+}
+
+.ng__item-val {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--primary);
+}
+
+.ng__item-unit {
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 1px;
+}
+
+.ng__map-container {
+    background: #fdfaf5;
+    position: relative;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ng__map-canvas {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+.ng__map-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.ng__map-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.ng__map-line {
+    stroke: var(--primary);
+    stroke-width: 2;
+    stroke-dasharray: 5, 5;
+    opacity: 0.4;
+    transition: var(--transition);
+}
+
+.ng__marker {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.ng__marker--project {
+    z-index: 10;
+}
+
+.ng__marker-card {
+    background: #0c1421;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--primary);
+    white-space: nowrap;
+}
+
+.ng__marker-logo img {
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.ng__marker-name {
+    font: 700 11px/1 "Montserrat", sans-serif;
+    letter-spacing: 1px;
+}
+
+.ng__marker-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: markerPulse 2s infinite;
+    z-index: -1;
+}
+
+@keyframes markerPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.ng__marker-label {
+    background: #fff;
+    padding: 8px 14px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+.ng__marker-label i {
+    width: 14px;
+    height: 14px;
+    color: var(--primary);
+}
+
+.ng__marker-label span {
+    font: 700 10px/1.2 "Montserrat", sans-serif;
+    color: #333;
+}
+
+.ng__marker-label small {
+    font-size: 8px;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.ng__marker:hover .ng__marker-label {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.ng__summary {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 24px;
+    background: #0c1421;
+    border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .ng__summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.ng__summary-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.ng__summary-item i {
+    width: 24px;
+    height: 24px;
+    color: var(--primary);
+    opacity: 0.8;
+}
+
+.ng__summary-item h4 {
+    font: 700 11px/1.4 "Montserrat", sans-serif;
+    color: #fff;
+    margin-bottom: 2px;
+}
+
+.ng__summary-item p {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.ng__summary-sep {
+    width: 1px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    align-self: center;
+}
+
+@media (max-width: 768px) {
+    .ng__summary-sep {
+        display: none;
+    }
+}
+
+.ng__footer {
+    margin-top: 40px;
+    text-align: center;
+    font: 600 12px/1 "Montserrat", sans-serif;
+    color: #999;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.ng__footer i {
+    width: 14px;
+    height: 14px;
+    color: var(--primary);
+}
+
+/* Mobile Fixes for Neighborhood Guide */
+@media (max-width: 600px) {
+    .ng__filters {
+        gap: 8px;
+    }
+
+    .ng__filter {
+        padding: 8px 16px;
+        font-size: 11px;
+    }
+
+    .ng__sidebar {
+        padding: 30px 20px;
+    }
+
+    .ng__map-container {
+        padding: 15px;
+    }
+
+    .ng__map-canvas {
+        aspect-ratio: 4 / 3;
+    }
+
+    .ng__marker-card {
+        padding: 6px 12px;
+    }
+
+    .ng__marker-label {
+        padding: 6px 10px;
+    }
+
+    .ng__marker-label span {
+        font-size: 8px;
+    }
+
+    .ng__summary {
+        padding: 15px;
+        gap: 10px;
+    }
+}
+
+/* ==========================================
+   NEIGHBORHOOD GUIDE - Premium Map Section
+   ========================================== */
+.ng {
+    padding: 100px 0;
+    background: #fff;
+    color: #1a1a1a;
+    overflow: hidden;
+}
+
+.ng__head {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.ng__kicker {
+    display: block;
+    font: 700 12px/1 "Montserrat", sans-serif;
+    letter-spacing: 4px;
+    color: var(--primary);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.ng__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 500;
+    color: #0c1a1a;
+    margin-bottom: 20px;
+}
+
+.ng__desc {
+    font-size: 16px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ng__filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.ng__filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 99px;
+    background: #f8f8f8;
+    border: 1px solid #eee;
+    font: 600 13px/1 "Montserrat", sans-serif;
+    color: #444;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.ng__filter i {
+    width: 16px;
+    height: 16px;
+}
+
+.ng__filter:hover {
+    background: #fff;
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.ng__filter.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
+}
+
+.ng__main {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+    background: #fff;
+    border-radius: 40px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    position: relative;
+}
+
+@media (max-width: 1024px) {
+    .ng__main {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ng__sidebar {
+    background: #0c1421;
+    color: #fff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ng__sidebar-head {
+    margin-bottom: 40px;
+}
+
+.ng__sidebar-title {
+    font: 700 13px/1.4 "Montserrat", sans-serif;
+    letter-spacing: 2px;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.ng__sidebar-sub {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.ng__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ng__item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: var(--transition);
+}
+
+.ng__item:last-child {
+    border-bottom: none;
+}
+
+.ng__item-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.ng__item-icon i {
+    width: 20px;
+    height: 20px;
+}
+
+.ng__item-info {
+    flex-grow: 1;
+}
+
+.ng__item-name {
+    display: block;
+    font: 700 14px/1 "Montserrat", sans-serif;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.ng__item-area {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.ng__item-time {
+    text-align: right;
+}
+
+.ng__item-val {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--primary);
+}
+
+.ng__item-unit {
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 1px;
+}
+
+.ng__map-container {
+    background: #fdfaf5;
+    position: relative;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ng__map-canvas {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+.ng__map-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.ng__map-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.ng__map-line {
+    stroke: var(--primary);
+    stroke-width: 2;
+    stroke-dasharray: 5, 5;
+    opacity: 0.4;
+    transition: var(--transition);
+}
+
+.ng__marker {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.ng__marker--project {
+    z-index: 10;
+}
+
+.ng__marker-card {
+    background: #0c1421;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--primary);
+    white-space: nowrap;
+}
+
+.ng__marker-logo img {
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.ng__marker-name {
+    font: 700 11px/1 "Montserrat", sans-serif;
+    letter-spacing: 1px;
+}
+
+.ng__marker-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: markerPulse 2s infinite;
+    z-index: -1;
+}
+
+@keyframes markerPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.ng__marker-label {
+    background: #fff;
+    padding: 8px 14px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+.ng__marker-label i {
+    width: 14px;
+    height: 14px;
+    color: var(--primary);
+}
+
+.ng__marker-label span {
+    font: 700 10px/1.2 "Montserrat", sans-serif;
+    color: #333;
+}
+
+.ng__marker-label small {
+    font-size: 8px;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.ng__marker:hover .ng__marker-label {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.ng__summary {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 24px;
+    background: #0c1421;
+    border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .ng__summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.ng__summary-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.ng__summary-item i {
+    width: 24px;
+    height: 24px;
+    color: var(--primary);
+    opacity: 0.8;
+}
+
+.ng__summary-item h4 {
+    font: 700 11px/1.4 "Montserrat", sans-serif;
+    color: #fff;
+    margin-bottom: 2px;
+}
+
+.ng__summary-item p {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.ng__summary-sep {
+    width: 1px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    align-self: center;
+}
+
+@media (max-width: 768px) {
+    .ng__summary-sep {
+        display: none;
+    }
+}
+
+.ng__footer {
+    margin-top: 40px;
+    text-align: center;
+    font: 600 12px/1 "Montserrat", sans-serif;
+    color: #999;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.ng__footer i {
+    width: 14px;
+    height: 14px;
+    color: var(--primary);
+}
+
+/* Mobile Fixes for Neighborhood Guide */
+@media (max-width: 600px) {
+    .ng__filters {
+        gap: 8px;
+    }
+
+    .ng__filter {
+        padding: 8px 16px;
+        font-size: 11px;
+    }
+
+    .ng__sidebar {
+        padding: 30px 20px;
+    }
+
+    .ng__map-container {
+        padding: 15px;
+    }
+
+    .ng__map-canvas {
+        aspect-ratio: 4 / 3;
+    }
+
+    .ng__marker-card {
+        padding: 6px 12px;
+    }
+
+    .ng__marker-label {
+        padding: 6px 10px;
+    }
+
+    .ng__marker-label span {
+        font-size: 8px;
+    }
+
+    .ng__summary {
+        padding: 15px;
+        gap: 10px;
+    }
+}
+
+/* ==========================================
+   INTERACTIVE MAP COMPONENT (Standalone)
+   ========================================== */
+.ng__map-canvas {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.ng__map-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.ng__map-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.ng__map-line {
+    stroke: var(--primary);
+    stroke-width: 2;
+    stroke-dasharray: 5, 5;
+    transition: var(--transition);
+}
+
+.ng__marker {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.ng__marker--project {
+    z-index: 10;
+}
+
+.ng__marker-card {
+    background: #0c1421;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--primary);
+    white-space: nowrap;
+}
+
+.ng__marker-logo img {
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.ng__marker-name {
+    font: 700 11px/1 "Montserrat", sans-serif;
+    letter-spacing: 1px;
+}
+
+.ng__marker-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: markerPulse 2s infinite;
+    z-index: -1;
+}
+
+@keyframes markerPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.ng__marker-label {
+    background: #fff;
+    padding: 8px 14px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+.ng__marker-label i {
+    width: 14px;
+    height: 14px;
+    color: var(--primary);
+}
+
+.ng__marker-label span {
+    font: 700 10px/1.2 "Montserrat", sans-serif;
+    color: #333;
+}
+
+.ng__marker-label small {
+    font-size: 8px;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.ng__marker:hover .ng__marker-label {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+@media (max-width: 600px) {
+    .ng__map-canvas {
+        aspect-ratio: 4 / 3;
+    }
+
+    .ng__marker-card {
+        padding: 6px 12px;
+    }
+
+    .ng__marker-label {
+        padding: 6px 10px;
+    }
+
+    .ng__marker-label span {
+        font-size: 8px;
+    }
+}
+
+/* ==========================================
+   TRAVELING MAP - Animated Connectivity
+   ========================================== */
+.travel-map {
+    padding: 41px 0 80px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.travel-map__inner {
+    position: relative;
+}
+
+.travel-map__head {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.travel-map__kicker {
+    display: inline-block;
+    font: 700 12px/1.1 "Montserrat", sans-serif;
+    letter-spacing: 4px;
+    color: var(--primary);
+    margin-bottom: 18px;
+    text-transform: uppercase;
+}
+
+.travel-map__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.1;
+    color: #1a1a1a;
+    margin-bottom: 24px;
+}
+
+.travel-map__desc {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.travel-map__canvas-wrap {
+    position: relative;
+    border-radius: 40px;
+    background: #fdfaf5;
+    padding: 40px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.06);
+}
+
+.travel-map__canvas {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04);
+}
+
+.travel-map__bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+}
+
+.travel-map__svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.route-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: stroke-dashoffset 3s ease-out;
+}
+
+.travel-map.revealed .route-path {
+    stroke-dashoffset: 0;
+}
+
+.car {
+    filter: drop-shadow(0 0 5px var(--primary));
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.travel-map.revealed .car {
+    opacity: 1;
+}
+
+/* Locality Nodes */
+.map-node {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+}
+
+.travel-map.revealed .map-node {
+    opacity: 1;
+}
+
+.node-project {
+    z-index: 10;
+}
+
+.node-project__card {
+    background: #0c1421;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--primary);
+    white-space: nowrap;
+}
+
+.node-project__card img {
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+.node-project__card span {
+    font: 700 12px/1 "Montserrat", sans-serif;
+    letter-spacing: 1px;
+}
+
+.node-project__pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.2;
+    animation: markerPulse 2s infinite;
+    z-index: -1;
+}
+
+.node-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--primary);
+    border: 3px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.5);
+    margin-bottom: 8px;
+}
+
+.node-label {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 8px 16px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    white-space: nowrap;
+}
+
+.node-label span {
+    font: 700 10px/1.2 "Montserrat", sans-serif;
+    color: #1a1a1a;
+}
+
+.node-label small {
+    font-size: 8px;
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Filters */
+.travel-map__filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    color: #1a1a1a;
+    padding: 12px 28px;
+    border-radius: 999px;
+    font: 600 12px/1 "Montserrat", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+    box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
+}
+
+@media (max-width: 768px) {
+    .travel-map__canvas {
+        aspect-ratio: 4/3;
+    }
+
+    .travel-map__filters {
+        flex-wrap: wrap;
+    }
+
+    .node-label {
+        padding: 6px 12px;
+    }
+}
+
+/* Locality Node Cards */
+.node-card {
+    background: #fff;
+    padding: 6px 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+.node-card i {
+    width: 16px;
+    height: 16px;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.node-card__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.node-card span {
+    font: 700 9px/1.1 "Montserrat", sans-serif;
+    color: #1a1a1a;
+    letter-spacing: 0.5px;
+}
+
+.node-card small {
+    font: 700 7px/1 "Montserrat", sans-serif;
+    color: var(--primary);
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+.map-node:hover .node-card {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 15px 35px rgba(197, 160, 89, 0.15);
+}
+
+/* Hide old label styles if still there */
+.node-label,
+.node-dot {
+    display: none;
+}
+
+/* Adjust Travel Map Canvas for Full Image */
+.travel-map__canvas {
+    aspect-ratio: 1 / 1;
+    /* Change to 1:1 to show the full height of the square generated image */
+    max-height: 85vh;
+    /* Prevent it from being too tall on large screens */
+}
+
+@media (min-width: 1200px) {
+    .travel-map__canvas {
+        aspect-ratio: 4 / 3;
+        /* Slightly wider on desktop but still showing more height */
+    }
+}
+
+.travel-map__bg {
+    object-fit: contain;
+    /* Ensure the entire image is visible without cropping */
+    background: #fdfaf5;
+}
+
+/* Style the new Building Images in cards */
+.node-card__img-wrap {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f8f8f8;
+    flex-shrink: 0;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.node-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.map-node:hover .node-card__img {
+    transform: scale(1.1);
+}
+
+/* Remove old icon styles if they conflict */
+.node-card i {
+    display: none;
 }

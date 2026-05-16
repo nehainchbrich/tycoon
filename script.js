@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             const filter = btn.dataset.filter;
-            
+
             // Update Filter Buttons
             filterButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
@@ -247,6 +247,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (window.lucide) window.lucide.createIcons();
+
+    // Traveling Map Reveal and Filtering
+    const travelSectionNew = document.querySelector('.travel-map');
+    const travelNodes = document.querySelectorAll('.travel-map .map-node');
+    const travelPaths = document.querySelectorAll('.travel-map .route-path');
+    const travelFilters = document.querySelectorAll('.travel-map .filter-btn');
+
+    if (travelSectionNew) {
+        const travelObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    travelSectionNew.classList.add('revealed');
+                    travelObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        travelObserver.observe(travelSectionNew);
+    }
+
+    if (travelFilters.length > 0) {
+        travelFilters.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+                travelFilters.forEach(f => f.classList.remove('active'));
+                btn.classList.add('active');
+
+                travelNodes.forEach(node => {
+                    if (filter === 'all' || node.dataset.category === filter || node.dataset.target === 'project') {
+                        node.style.opacity = '1';
+                        node.style.visibility = 'visible';
+                    } else {
+                        node.style.opacity = '0.2';
+                        node.style.visibility = 'visible';
+                    }
+                });
+            });
+        });
+    }
 
     // Creative gallery reveal on scroll
     const creativeGallery = document.querySelector('.gallery-creative');

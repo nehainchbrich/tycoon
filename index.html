@@ -378,6 +378,208 @@
         </div>
     </section>
 
+    <!-- Animated Traveling Map -->
+    <section class="travel-map" id="connectivity" aria-label="Connectivity Map">
+        <div class="container travel-map__inner">
+
+
+            <div class="travel-map__canvas-wrap reveal-up">
+                <div class="travel-map__canvas">
+                    <!-- Base Map Image -->
+                    <img src="godrej_tycoon_animated_map_base_1778938278590.png" alt="Godrej Tycoon Connectivity Map"
+                        class="travel-map__bg">
+
+                    <!-- Animated SVG Roads & Cars -->
+                    <svg class="travel-map__svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice">
+                        <defs>
+                            <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6"
+                                orient="auto-start-reverse">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--primary)" />
+                            </marker>
+                        </defs>
+                        <!-- Roads (Paths) -->
+                        <path id="road-1" class="route-path" d="M100,500 C300,450 400,350 500,300" fill="none"
+                            stroke="rgba(197, 160, 89, 0.3)" stroke-width="2" stroke-dasharray="10,10" />
+                        <path id="road-2" class="route-path" d="M900,100 C700,150 600,250 500,300" fill="none"
+                            stroke="rgba(197, 160, 89, 0.3)" stroke-width="2" stroke-dasharray="10,10" />
+                        <path id="road-3" class="route-path" d="M100,100 C300,150 400,250 500,300" fill="none"
+                            stroke="rgba(197, 160, 89, 0.3)" stroke-width="2" stroke-dasharray="10,10" />
+                        <path id="road-4" class="route-path" d="M900,500 C700,450 600,350 500,300" fill="none"
+                            stroke="rgba(197, 160, 89, 0.3)" stroke-width="2" stroke-dasharray="10,10" />
+                        <path id="road-5" class="route-path" d="M50,300 L500,300" fill="none"
+                            stroke="rgba(197, 160, 89, 0.3)" stroke-width="2" stroke-dasharray="10,10" />
+                        <path id="road-6" class="route-path" d="M950,300 L500,300" fill="none"
+                            stroke="rgba(197, 160, 89, 0.3)" stroke-width="2" stroke-dasharray="10,10" />
+                        <path id="road-7" class="route-path" d="M250,180 L500,300" fill="none"
+                            stroke="rgba(197, 160, 89, 0.3)" stroke-width="2" stroke-dasharray="10,10" />
+                        <path id="road-8" class="route-path" d="M750,420 L500,300" fill="none"
+                            stroke="rgba(197, 160, 89, 0.3)" stroke-width="2" stroke-dasharray="10,10" />
+
+                        <!-- Animated Cars (Moving Dots) -->
+                        <g class="car-group">
+                            <circle class="car" r="5" fill="var(--primary)">
+                                <animateMotion dur="4s" repeatCount="indefinite"
+                                    path="M100,500 C300,450 400,350 500,300" />
+                            </circle>
+                        </g>
+                        <g class="car-group">
+                            <circle class="car car--delay-1" r="5" fill="var(--primary)">
+                                <animateMotion dur="5s" repeatCount="indefinite"
+                                    path="M900,100 C700,150 600,250 500,300" />
+                            </circle>
+                        </g>
+                        <g class="car-group">
+                            <circle class="car car--delay-2" r="5" fill="var(--primary)">
+                                <animateMotion dur="6s" repeatCount="indefinite"
+                                    path="M100,100 C300,150 400,250 500,300" />
+                            </circle>
+                        </g>
+                        <g class="car-group">
+                            <circle class="car car--delay-3" r="5" fill="var(--primary)">
+                                <animateMotion dur="4.5s" repeatCount="indefinite"
+                                    path="M900,500 C700,450 600,350 500,300" />
+                            </circle>
+                        </g>
+                        <g class="car-group">
+                            <circle class="car" r="4" fill="var(--primary)">
+                                <animateMotion dur="3.5s" repeatCount="indefinite" path="M50,300 L500,300" />
+                            </circle>
+                        </g>
+                        <g class="car-group">
+                            <circle class="car car--delay-1" r="4" fill="var(--primary)">
+                                <animateMotion dur="4.2s" repeatCount="indefinite" path="M950,300 L500,300" />
+                            </circle>
+                        </g>
+                        <g class="car-group">
+                            <circle class="car car--delay-2" r="4" fill="var(--primary)">
+                                <animateMotion dur="5.5s" repeatCount="indefinite" path="M250,180 L500,300" />
+                            </circle>
+                        </g>
+                        <g class="car-group">
+                            <circle class="car car--delay-3" r="4" fill="var(--primary)">
+                                <animateMotion dur="4.8s" repeatCount="indefinite" path="M750,420 L500,300" />
+                            </circle>
+                        </g>
+                    </svg>
+
+                    <!-- Locality Markers -->
+                    <div class="map-node node-project" style="top: 50%; left: 50%;" data-target="project">
+                        <div class="node-project__card">
+                            <img src="logo.png" alt="Godrej Tycoon">
+                            <span>GODREJ TYCOON</span>
+                        </div>
+                        <div class="node-project__pulse"></div>
+                    </div>
+
+                    <div class="map-node" style="top: 83%; left: 10%;" data-category="transit">
+                        <div class="node-card">
+                            <div class="node-card__img-wrap">
+                                <img src="nearby_buildings.png" alt="Rapid Metro Building" class="node-card__img">
+                            </div>
+                            <div class="node-card__info">
+                                <span>RAPID METRO</span>
+                                <small>5 MINS</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-node" style="top: 16%; left: 90%;" data-category="lifestyle">
+                        <div class="node-card">
+                            <div class="node-card__img-wrap">
+                                <img src="nearby_buildings.png" alt="Mall Building" class="node-card__img">
+                            </div>
+                            <div class="node-card__info">
+                                <span>SOUTH POINT MALL</span>
+                                <small>8 MINS</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-node" style="top: 16%; left: 10%;" data-category="health">
+                        <div class="node-card">
+                            <div class="node-card__img-wrap">
+                                <img src="nearby_buildings.png" alt="Hospital Building" class="node-card__img">
+                            </div>
+                            <div class="node-card__info">
+                                <span>MAX HOSPITAL</span>
+                                <small>5 MINS</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-node" style="top: 83%; left: 90%;" data-category="transit">
+                        <div class="node-card">
+                            <div class="node-card__img-wrap">
+                                <img src="nearby_buildings.png" alt="Airport Terminal" class="node-card__img">
+                            </div>
+                            <div class="node-card__info">
+                                <span>IGI AIRPORT</span>
+                                <small>20 MINS</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-node" style="top: 50%; left: 5%;" data-category="transit">
+                        <div class="node-card">
+                            <div class="node-card__img-wrap">
+                                <img src="nearby_buildings.png" alt="Office Building" class="node-card__img">
+                            </div>
+                            <div class="node-card__info">
+                                <span>DLF CYBER CITY</span>
+                                <small>15 MINS</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-node" style="top: 50%; left: 95%;" data-category="lifestyle">
+                        <div class="node-card">
+                            <div class="node-card__img-wrap">
+                                <img src="nearby_buildings.png" alt="Mall Building" class="node-card__img">
+                            </div>
+                            <div class="node-card__info">
+                                <span>AMBIENCE MALL</span>
+                                <small>15 MINS</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-node" style="top: 30%; left: 25%;" data-category="education">
+                        <div class="node-card">
+                            <div class="node-card__img-wrap">
+                                <img src="nearby_buildings.png" alt="School Building" class="node-card__img">
+                            </div>
+                            <div class="node-card__info">
+                                <span>ST. XAVIER'S SCHOOL</span>
+                                <small>10 MINS</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-node" style="top: 70%; left: 75%;" data-category="health">
+                        <div class="node-card">
+                            <div class="node-card__img-wrap">
+                                <img src="nearby_buildings.png" alt="Hospital Building" class="node-card__img">
+                            </div>
+                            <div class="node-card__info">
+                                <span>PARK HOSPITAL</span>
+                                <small>10 MINS</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Filters -->
+                <div class="travel-map__filters">
+                    <button class="filter-btn active" data-filter="all">All Access</button>
+                    <button class="filter-btn" data-filter="transit">Transit</button>
+                    <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
+                    <button class="filter-btn" data-filter="health">Healthcare</button>
+                    <button class="filter-btn" data-filter="education">Education</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
     <!-- Creative Gallery -->
