@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --primary: #C5A059;
     --primary-light: #E5C17B;
     --primary-dark: #A68045;
@@ -6044,11 +6044,87 @@ h4 {
 .route-path {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
-    transition: stroke-dashoffset 3s ease-out;
+    transition: stroke-dashoffset 2.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .travel-map.revealed .route-path {
     stroke-dashoffset: 0;
+}
+
+/* 1. Road Casing (Outer luxury gold borders) */
+.travel-map__canvas .road-casing {
+    stroke: rgba(197, 160, 89, 0.4) !important;
+    stroke-width: 10px !important;
+    stroke-linecap: round !important;
+    fill: none !important;
+    transition: stroke-dashoffset 2.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* 2. Road Bed (Sleek dark asphalt) */
+.travel-map__canvas .road-bed {
+    stroke: #1e2530 !important; /* Premium deep charcoal-blue asphalt */
+    stroke-width: 8px !important;
+    stroke-linecap: round !important;
+    fill: none !important;
+    transition: stroke-dashoffset 2.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* 3. Road Divider (Lanes Center Lines) */
+.travel-map__canvas .road-divider {
+    stroke: rgba(255, 255, 255, 0.8) !important;
+    stroke-width: 0.8px !important;
+    stroke-linecap: round !important;
+    stroke-dasharray: 4, 7 !important;
+    stroke-dashoffset: 0 !important; /* Bypass draw-in animation */
+    fill: none !important;
+    opacity: 0;
+    transition: opacity 1s ease-in-out 1.5s !important; /* Fade in after road base is drawn */
+}
+
+.travel-map.revealed .road-divider {
+    opacity: 0.85;
+}
+
+/* 4. Glowing Road Highlights (Animated) */
+.travel-map__canvas .route-highlight {
+    stroke: #ffdf9e !important; /* Elegant gold highlight pulse */
+    stroke-width: 2.5px !important;
+    stroke-linecap: round !important;
+    stroke-dasharray: 45 1000 !important;
+    stroke-dashoffset: 1045 !important; /* Bypass draw-in animation */
+    fill: none !important;
+    filter: drop-shadow(0 0 5px var(--primary)) !important;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out 1.8s !important; /* Fade in after dividers */
+}
+
+.travel-map.revealed .route-highlight {
+    opacity: 1;
+    animation: dashHighlight 3.5s linear infinite;
+}
+
+.travel-map.revealed .hl-2, .travel-map.revealed .hl-5 {
+    animation-delay: 1.5s;
+    animation-duration: 4.5s;
+}
+
+.travel-map.revealed .hl-3, .travel-map.revealed .hl-6 {
+    animation-delay: 0.5s;
+    animation-duration: 4s;
+}
+
+.travel-map.revealed .hl-4, .travel-map.revealed .hl-8 {
+    animation-delay: 2s;
+    animation-duration: 5s;
+}
+
+@keyframes dashHighlight {
+    0% {
+        stroke-dashoffset: 1045;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
 }
 
 .car {
