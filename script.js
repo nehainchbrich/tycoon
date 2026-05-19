@@ -306,4 +306,16 @@ document.addEventListener('DOMContentLoaded', () => {
             creativeGalleryObserver.observe(creativeGallery);
         }
     }
+
+    // Footer Scroll To Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (scrollToTopBtn) {
+        scrollToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
