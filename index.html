@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="hero__actions">
-                    <a href="#contact" class="hero__btn hero__btn--primary">
+                    <a href="#" id="exploreResidencesBtn" class="hero__btn hero__btn--primary">
                         EXPLORE RESIDENCES <i data-lucide="move-right"></i>
                     </a>
                     <a href="#gallery" class="hero__btn hero__btn--outline">
@@ -108,7 +108,7 @@
                         </div>
                         <div class="hero__field">
                             <i data-lucide="phone"></i>
-                            <input type="tel" name="phone" placeholder="Mobile Number" required>
+                            <input type="tel" name="phone" placeholder="Mobile Number" value="+91 " required>
                         </div>
                         <div class="hero__field">
                             <i data-lucide="mail"></i>
@@ -671,8 +671,8 @@
                 <div class="footer-cta">
                     <h2>Call now and claim the last <br>premium address on Golf Course Road.</h2>
 
-                    <button id="scrollToTopBtn" class="hero__btn hero__btn--primary" style="margin: 30px 0;">Call
-                        Now</button>
+                    <button id="footerEnquireBtn" class="hero__btn hero__btn--primary"
+                        style="margin: 30px 0; border: none; cursor: pointer;">CALL NOW</button>
 
                     <div class="footer-contacts" aria-label="Contact details">
                         <a class="footer-contact" href="tel:+971
@@ -696,6 +696,45 @@
             </div>
         </div>
     </footer>
+
+    <!-- Enquiry Popup Modal -->
+    <div id="enquiryModal" class="enquiry-modal" aria-hidden="true">
+        <div class="enquiry-modal__overlay"></div>
+        <div class="enquiry-modal__container">
+            <button class="enquiry-modal__close" aria-label="Close modal">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="hero__form-card">
+                <div class="hero__form-main">
+                    <div class="hero__form-head">
+                        <h2 class="hero__form-title">Enquire Now</h2>
+                        <div class="hero__form-divider"></div>
+                    </div>
+                    <form id="popup-form" class="hero__form">
+                        <div class="hero__field">
+                            <i data-lucide="user"></i>
+                            <input type="text" name="name" placeholder="Full Name" required>
+                        </div>
+                        <div class="hero__field">
+                            <i data-lucide="phone"></i>
+                            <input type="tel" name="phone" placeholder="Mobile Number" value="+91 " required>
+                        </div>
+                        <div class="hero__field">
+                            <i data-lucide="mail"></i>
+                            <input type="email" name="email" placeholder="Email Address" required>
+                        </div>
+                        <button type="submit" class="hero__submit">
+                            SUBMIT REQUEST <i data-lucide="move-right"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="hero__form-footer">
+                    <i data-lucide="sparkles"></i>
+                    <p>CURATED LIVING. TIMELESS VALUE.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

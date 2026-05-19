@@ -307,15 +307,80 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Footer Scroll To Top Button
+    // Enquiry Popup Modal Interactions
+    const enquiryModal = document.getElementById('enquiryModal');
+    const modalCloseBtn = document.querySelector('.enquiry-modal__close');
+    const modalOverlay = document.querySelector('.enquiry-modal__overlay');
+    
+    const openModal = () => {
+        if (enquiryModal) {
+            enquiryModal.classList.add('is-active');
+            enquiryModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden'; // Lock background scroll
+        }
+    };
+    
+    const closeModal = () => {
+        if (enquiryModal) {
+            enquiryModal.classList.remove('is-active');
+            enquiryModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = ''; // Unlock scroll
+        }
+    };
+    
+    // Attach event to the new footer Enquire Button
+    const footerEnquireBtn = document.getElementById('footerEnquireBtn');
+    if (footerEnquireBtn) {
+        footerEnquireBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
+        });
+    }
+
+    // Attach event to the EXPLORE RESIDENCES Button
+    const exploreResidencesBtn = document.getElementById('exploreResidencesBtn');
+    if (exploreResidencesBtn) {
+        exploreResidencesBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
+        });
+    }
+
+    // Attach event to old button if it still exists
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
     if (scrollToTopBtn) {
         scrollToTopBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            openModal();
         });
+    }
+    
+    // Attach event to Header CTA
+    const navCta = document.querySelector('.nav-cta');
+    if (navCta) {
+        navCta.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
+        });
+    }
+
+    // Attach to Close triggers
+    if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', closeModal);
+    }
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', closeModal);
+    }
+    
+    // Close on Escape Key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+    // Ensure Lucide icons are initialized
+    if (window.lucide) {
+        window.lucide.createIcons();
     }
 });
