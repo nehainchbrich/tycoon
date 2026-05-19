@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --primary: #C5A059;
     --primary-light: #E5C17B;
     --primary-dark: #A68045;
@@ -61,7 +61,7 @@ body.footer-only-page .footer-section {
 
 /* Light banner + readable fixed header on this layout */
 body.footer-only-page .header {
-    background: rgba(255, 255, 255, 0.94);
+    background: #fff;
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -6775,7 +6775,8 @@ h4 {
     .travel-map__canvas-wrap {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        margin: 0 -20px; /* Stretch past container padding */
+        margin: 0 -20px;
+        /* Stretch past container padding */
         padding: 0 20px 15px 20px !important;
     }
 
