@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --primary: #C5A059;
     --primary-light: #E5C17B;
     --primary-dark: #A68045;
@@ -6772,6 +6772,17 @@ h4 {
 }
 
 @media (max-width: 768px) {
+    .travel-map__canvas-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -20px; /* Stretch past container padding */
+        padding: 0 20px 15px 20px !important;
+    }
+
+    .travel-map__canvas {
+        min-width: 800px !important;
+    }
+
     .ditto-map__header {
         position: relative;
         top: 0;
