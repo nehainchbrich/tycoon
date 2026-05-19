@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --primary: #C5A059;
     --primary-light: #E5C17B;
     --primary-dark: #A68045;
@@ -6029,7 +6029,6 @@ h4 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.85;
 }
 
 .travel-map__svg {
@@ -6062,7 +6061,8 @@ h4 {
 
 /* 2. Road Bed (Sleek dark asphalt) */
 .travel-map__canvas .road-bed {
-    stroke: #1e2530 !important; /* Premium deep charcoal-blue asphalt */
+    stroke: #1e2530 !important;
+    /* Premium deep charcoal-blue asphalt */
     stroke-width: 8px !important;
     stroke-linecap: round !important;
     fill: none !important;
@@ -6075,10 +6075,12 @@ h4 {
     stroke-width: 0.8px !important;
     stroke-linecap: round !important;
     stroke-dasharray: 4, 7 !important;
-    stroke-dashoffset: 0 !important; /* Bypass draw-in animation */
+    stroke-dashoffset: 0 !important;
+    /* Bypass draw-in animation */
     fill: none !important;
     opacity: 0;
-    transition: opacity 1s ease-in-out 1.5s !important; /* Fade in after road base is drawn */
+    transition: opacity 1s ease-in-out 1.5s !important;
+    /* Fade in after road base is drawn */
 }
 
 .travel-map.revealed .road-divider {
@@ -6087,15 +6089,18 @@ h4 {
 
 /* 4. Glowing Road Highlights (Animated) */
 .travel-map__canvas .route-highlight {
-    stroke: #ffdf9e !important; /* Elegant gold highlight pulse */
+    stroke: #ffdf9e !important;
+    /* Elegant gold highlight pulse */
     stroke-width: 2.5px !important;
     stroke-linecap: round !important;
     stroke-dasharray: 45 1000 !important;
-    stroke-dashoffset: 1045 !important; /* Bypass draw-in animation */
+    stroke-dashoffset: 1045 !important;
+    /* Bypass draw-in animation */
     fill: none !important;
     filter: drop-shadow(0 0 5px var(--primary)) !important;
     opacity: 0;
-    transition: opacity 1.5s ease-in-out 1.8s !important; /* Fade in after dividers */
+    transition: opacity 1.5s ease-in-out 1.8s !important;
+    /* Fade in after dividers */
 }
 
 .travel-map.revealed .route-highlight {
@@ -6103,17 +6108,20 @@ h4 {
     animation: dashHighlight 3.5s linear infinite;
 }
 
-.travel-map.revealed .hl-2, .travel-map.revealed .hl-5 {
+.travel-map.revealed .hl-2,
+.travel-map.revealed .hl-5 {
     animation-delay: 1.5s;
     animation-duration: 4.5s;
 }
 
-.travel-map.revealed .hl-3, .travel-map.revealed .hl-6 {
+.travel-map.revealed .hl-3,
+.travel-map.revealed .hl-6 {
     animation-delay: 0.5s;
     animation-duration: 4s;
 }
 
-.travel-map.revealed .hl-4, .travel-map.revealed .hl-8 {
+.travel-map.revealed .hl-4,
+.travel-map.revealed .hl-8 {
     animation-delay: 2s;
     animation-duration: 5s;
 }
@@ -6122,6 +6130,7 @@ h4 {
     0% {
         stroke-dashoffset: 1045;
     }
+
     100% {
         stroke-dashoffset: 0;
     }
@@ -6341,7 +6350,6 @@ h4 {
 .travel-map__bg {
     object-fit: contain;
     /* Ensure the entire image is visible without cropping */
-    background: #fdfaf5;
 }
 
 /* Style the new Building Images in cards */
@@ -6369,4 +6377,458 @@ h4 {
 /* Remove old icon styles if they conflict */
 .node-card i {
     display: none;
+}
+
+/* =========================================
+   DITTO MAP STYLES (Godrej Samaris Replica)
+   ========================================= */
+.ditto-map {
+    background-color: #f8f6f0;
+    padding: 80px 0;
+    padding-top: 23px;
+    font-family: "Montserrat", sans-serif;
+    overflow: hidden;
+}
+
+/* Floating Header */
+.ditto-map__header {
+    text-align: center;
+    top: 40px;
+    left: 40px;
+    z-index: 10;
+    pointer-events: none;
+    margin-bottom: 1rem;
+}
+
+.ditto-map__title {
+    font-size: 42px;
+    font-weight: 400;
+    color: #1a1a1a;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    font-family: 'Playfair Display', serif;
+}
+
+.ditto-map__subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #c5a059;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ditto-map__header-line {
+    width: 100%;
+    height: 1px;
+    background: #c5a059;
+    margin-bottom: 15px;
+    opacity: 0.4;
+}
+
+.ditto-map__desc {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* Top Center Logo & Compass */
+.ditto-top-center {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(253, 252, 248, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 16px 40px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(197, 160, 89, 0.3);
+}
+
+.ditto-top-center h5.brand-top {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 8px;
+    color: #1a1a1a;
+    margin: 0 0 2px 0;
+    text-transform: uppercase;
+}
+
+.ditto-top-center h3.brand-bottom {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 12px;
+    color: #c5a059;
+    font-family: 'Playfair Display', serif;
+    margin: 0 0 10px 0;
+}
+
+.ditto-top-center p {
+    font-size: 9px;
+    font-weight: 700;
+    color: #444;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.ditto-vertical-line {
+    position: absolute;
+    top: 175px;
+    bottom: 55%;
+    left: 50%;
+    width: 1.5px;
+    background: linear-gradient(to bottom, rgba(197, 160, 89, 0.8), rgba(197, 160, 89, 0.2));
+    z-index: 15;
+}
+
+.ditto-compass {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    z-index: 10;
+}
+
+/* Paths and Pins */
+.ditto-path-bg {
+    display: block;
+    stroke: #222222b5;
+    /* Dark asphalt road background */
+    stroke-width: 7px;
+    stroke-linecap: round;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.ditto-path {
+    display: block;
+    stroke: rgb(213 212 212 / 95%);
+    stroke-width: 1px;
+    stroke-dasharray: 3 8;
+    stroke-linecap: round;
+}
+
+.ditto-ring {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 4px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.ditto-center-pin {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    z-index: 30;
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4));
+    animation: pinBounce 2s infinite ease-in-out;
+}
+
+@keyframes pinBounce {
+
+    0%,
+    100% {
+        transform: translate(-50%, -100%);
+    }
+
+    50% {
+        transform: translate(-50%, -110%);
+    }
+}
+
+/* Refined Cards */
+.ditto-node {
+    position: absolute;
+    z-index: 25;
+    width: 0;
+    height: 0;
+}
+
+.ditto-card {
+    position: absolute;
+    background: #fcfbf8;
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(197, 160, 89, 0.15);
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: max-content;
+    max-width: 300px;
+    white-space: normal;
+}
+
+.ditto-card:hover {
+    transform: translateY(-55%) scale(1.02);
+    box-shadow: 0 20px 50px rgba(197, 160, 89, 0.2);
+}
+
+/* Connectors */
+.ditto-card::before {
+    content: '';
+    position: absolute;
+    border-top: 2px dashed rgba(255, 255, 255, 0.9);
+    width: 30px;
+    z-index: -1;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+}
+
+.ditto-node.left .ditto-card {
+    right: 0;
+    margin-right: 30px;
+}
+
+.ditto-node.left .ditto-card::before {
+    left: 100%;
+    top: 50%;
+}
+
+.ditto-node.right .ditto-card {
+    left: 0;
+    margin-left: 30px;
+}
+
+.ditto-node.right .ditto-card::before {
+    right: 100%;
+    top: 50%;
+}
+
+/* Card Content */
+.ditto-card__icon {
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    width: 36px;
+    height: 36px;
+    background: #a47a38;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border: 3px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.ditto-card__icon i {
+    width: 16px;
+    height: 16px;
+}
+
+.ditto-card__img {
+    width: 75px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.ditto-card__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.ditto-card__info h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 3px;
+    line-height: 1.2;
+}
+
+.ditto-card__info p {
+    font-size: 11px;
+    color: #666;
+    font-weight: 500;
+}
+
+.ditto-card__info span {
+    color: #a47a38;
+    font-weight: 700;
+}
+
+.ditto-desc {
+    font-size: 10px !important;
+    color: #444 !important;
+    margin: 6px 0 4px 0 !important;
+    line-height: 1.4 !important;
+}
+
+.ditto-list {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+}
+
+.ditto-list li {
+    font-size: 10px;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.ditto-list li i {
+    width: 10px;
+    height: 10px;
+    color: #555;
+}
+
+.ditto-list.bullet {
+    list-style: disc;
+    padding-left: 14px;
+}
+
+.ditto-list.bullet li {
+    display: list-item;
+}
+
+/* Features Banner with Vertical Dividers */
+.ditto-features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -35px auto 0 auto;
+    position: relative;
+    z-index: 25;
+    padding: 25px 35px;
+    background: #fdfcf8;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    max-width: 1100px;
+    gap: 25px;
+}
+
+.ditto-feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.ditto-feature-divider {
+    width: 1px;
+    height: 45px;
+    background: rgba(197, 160, 89, 0.3);
+}
+
+.ditto-feature i {
+    color: #c5a059;
+    width: 32px;
+    height: 32px;
+    stroke-width: 1.5;
+    flex-shrink: 0;
+}
+
+.ditto-feature h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+}
+
+.ditto-feature p {
+    font-size: 11.5px;
+    color: #666;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+@media (max-width: 1200px) {
+    .ditto-features {
+        max-width: 95%;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .ditto-feature h4 {
+        font-size: 12px;
+    }
+
+    .ditto-feature p {
+        font-size: 10px;
+    }
+
+    .ditto-card {
+        max-width: 240px;
+    }
+}
+
+.ditto-card small {
+    font-size: .6rem;
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    .ditto-map__header {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 20px;
+        padding: 0 20px;
+    }
+
+    .ditto-top-center {
+        position: relative;
+        top: 0;
+        margin-bottom: 20px;
+        transform: none;
+        left: 0;
+    }
+
+    .ditto-vertical-line {
+        display: none;
+    }
+
+    .ditto-compass {
+        display: none;
+    }
+
+    .ditto-features {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .ditto-feature-divider {
+        width: 100%;
+        height: 1px;
+        margin: 10px 0;
+    }
+
+    .ditto-feature {
+        width: 100%;
+    }
+
+    .ditto-card {
+        padding: 8px;
+        gap: 10px;
+        max-width: 180px;
+    }
+
+    .ditto-card__img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .ditto-card__info h4 {
+        font-size: 11px;
+    }
+
+    .ditto-card__info p {
+        font-size: 9px;
+    }
 }

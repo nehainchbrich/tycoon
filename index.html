@@ -379,258 +379,200 @@
     </section>
 
     <!-- Animated Traveling Map -->
-    <section class="travel-map" id="connectivity" aria-label="Connectivity Map">
+    <section class="travel-map ditto-map" id="connectivity" aria-label="Connectivity Map">
         <div class="container travel-map__inner">
+            <div class="ditto-map__header">
+                <p class="ditto-map__subtitle">Golf Course Road, Gurugram.</p>
+                <div class="ditto-map__header-line"></div>
+                <p class="ditto-map__desc">This road has more billionaires per km<br>than anywhere in India.</p>
+            </div>
+            <div class="travel-map__canvas-wrap reveal-up"
+                style="padding: 0; background: transparent; box-shadow: none; position: relative;">
+
+                <!-- Floating Title Block -->
 
 
-            <div class="travel-map__canvas-wrap reveal-up">
-                <div class="travel-map__canvas">
-                    <!-- Base Map Image -->
-                    <img src="godrej_tycoon_animated_map_base_1778938278590.png" alt="Godrej Tycoon Connectivity Map"
-                        class="travel-map__bg">
+                <!-- Top Center Logo & Vertical Line -->
+                <div class="ditto-top-center">
 
-                    <!-- Animated SVG Roads & Cars -->
-                    <svg class="travel-map__svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice">
-                        <defs>
-                            <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6"
-                                orient="auto-start-reverse">
-                                <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--primary)" />
-                            </marker>
-                        </defs>
-                        <!-- Roads (Paths) -->
-                        <!-- 1. Road Casings (Outer Luxury Gold Borders) -->
-                        <path class="route-path road-casing" data-category="transit"
-                            d="M100,500 C300,450 400,350 500,300" fill="none" />
-                        <path class="route-path road-casing" data-category="lifestyle"
-                            d="M900,100 C700,150 600,250 500,300" fill="none" />
-                        <path class="route-path road-casing" data-category="health"
-                            d="M100,100 C300,150 400,250 500,300" fill="none" />
-                        <path class="route-path road-casing" data-category="transit"
-                            d="M900,500 C700,450 600,350 500,300" fill="none" />
-                        <path class="route-path road-casing" data-category="transit" d="M50,300 L500,300" fill="none" />
-                        <path class="route-path road-casing" data-category="lifestyle" d="M950,300 L500,300"
-                            fill="none" />
-                        <path class="route-path road-casing" data-category="education" d="M250,180 L500,300"
-                            fill="none" />
-                        <path class="route-path road-casing" data-category="health" d="M750,420 L500,300" fill="none" />
+                    <h5 class="brand-top">GODREJ</h5>
+                    <h3 class="brand-bottom">SAMARIS</h3>
+                    <p>GOLF COURSE ROAD, GURUGRAM, HARYANA</p>
+                </div>
+                <div class="ditto-vertical-line"></div>
 
-                        <!-- 2. Road Beds (Sleek Dark Asphalt) -->
-                        <path class="route-path road-bed" data-category="transit" id="road-1"
-                            d="M100,500 C300,450 400,350 500,300" fill="none" />
-                        <path class="route-path road-bed" data-category="lifestyle" id="road-2"
-                            d="M900,100 C700,150 600,250 500,300" fill="none" />
-                        <path class="route-path road-bed" data-category="health" id="road-3"
-                            d="M100,100 C300,150 400,250 500,300" fill="none" />
-                        <path class="route-path road-bed" data-category="transit" id="road-4"
-                            d="M900,500 C700,450 600,350 500,300" fill="none" />
-                        <path class="route-path road-bed" data-category="transit" id="road-5" d="M50,300 L500,300"
-                            fill="none" />
-                        <path class="route-path road-bed" data-category="lifestyle" id="road-6" d="M950,300 L500,300"
-                            fill="none" />
-                        <path class="route-path road-bed" data-category="education" id="road-7" d="M250,180 L500,300"
-                            fill="none" />
-                        <path class="route-path road-bed" data-category="health" id="road-8" d="M750,420 L500,300"
-                            fill="none" />
 
-                        <!-- 3. Road Dividers (Lanes Center Lines) -->
-                        <path class="route-path road-divider" data-category="transit"
-                            d="M100,500 C300,450 400,350 500,300" fill="none" />
-                        <path class="route-path road-divider" data-category="lifestyle"
-                            d="M900,100 C700,150 600,250 500,300" fill="none" />
-                        <path class="route-path road-divider" data-category="health"
-                            d="M100,100 C300,150 400,250 500,300" fill="none" />
-                        <path class="route-path road-divider" data-category="transit"
-                            d="M900,500 C700,450 600,350 500,300" fill="none" />
-                        <path class="route-path road-divider" data-category="transit" d="M50,300 L500,300"
-                            fill="none" />
-                        <path class="route-path road-divider" data-category="lifestyle" d="M950,300 L500,300"
-                            fill="none" />
-                        <path class="route-path road-divider" data-category="education" d="M250,180 L500,300"
-                            fill="none" />
-                        <path class="route-path road-divider" data-category="health" d="M750,420 L500,300"
-                            fill="none" />
+                <div class="travel-map__canvas" style="aspect-ratio: 16/9; max-height: none; overflow: visible;">
+                    <img src="images/maping.png" alt="Godrej Tycoon Connectivity Map" class="travel-map__bg"
+                        style="border-radius: 24px;">
 
-                        <!-- 4. Glowing Road Highlights (Animated) -->
-                        <path class="route-path route-highlight hl-1" data-category="transit"
-                            d="M100,500 C300,450 400,350 500,300" fill="none" />
-                        <path class="route-path route-highlight hl-2" data-category="lifestyle"
-                            d="M900,100 C700,150 600,250 500,300" fill="none" />
-                        <path class="route-path route-highlight hl-3" data-category="health"
-                            d="M100,100 C300,150 400,250 500,300" fill="none" />
-                        <path class="route-path route-highlight hl-4" data-category="transit"
-                            d="M900,500 C700,450 600,350 500,300" fill="none" />
-                        <path class="route-path route-highlight hl-5" data-category="transit" d="M50,300 L500,300"
-                            fill="none" />
-                        <path class="route-path route-highlight hl-6" data-category="lifestyle" d="M950,300 L500,300"
-                            fill="none" />
-                        <path class="route-path route-highlight hl-7" data-category="education" d="M250,180 L500,300"
-                            fill="none" />
-                        <path class="route-path route-highlight hl-8" data-category="health" d="M750,420 L500,300"
-                            fill="none" />
+                    <svg class="travel-map__svg" viewBox="0 0 1000 600" preserveAspectRatio="none"
+                        style="border-radius: 24px;">
+                        <!-- Thick Dashed Connecting Lines (6 paths) -->
+                        <path class="ditto-path-bg" fill="none" d="M500,270 C400,200 350,150 280,150" />
+                        <path class="ditto-path" fill="none" d="M500,270 C400,200 350,150 280,150" />
+                        <path class="ditto-path-bg" fill="none" d="M500,270 L280,300" />
+                        <path class="ditto-path" fill="none" d="M500,270 L280,300" />
+                        <path class="ditto-path-bg" fill="none" d="M500,270 C400,400 350,480 280,480" />
+                        <path class="ditto-path" fill="none" d="M500,270 C400,400 350,480 280,480" />
+                        <path class="ditto-path-bg" fill="none" d="M500,270 C600,200 650,150 720,150" />
+                        <path class="ditto-path" fill="none" d="M500,270 C600,200 650,150 720,150" />
+                        <path class="ditto-path-bg" fill="none" d="M500,270 C600,320 650,360 720,360" />
+                        <path class="ditto-path" fill="none" d="M500,270 C600,320 650,360 720,360" />
+                        <path class="ditto-path-bg" fill="none" d="M500,270 C600,400 650,480 720,480" />
+                        <path class="ditto-path" fill="none" d="M500,270 C600,400 650,480 720,480" />
 
-                        <!-- Animated Cars (Moving Dots) -->
+                        <!-- White Rings at Ends -->
+                        <circle cx="280" cy="150" r="7" class="ditto-ring" />
+                        <circle cx="280" cy="300" r="7" class="ditto-ring" />
+                        <circle cx="280" cy="480" r="7" class="ditto-ring" />
+                        <circle cx="720" cy="150" r="7" class="ditto-ring" />
+                        <circle cx="720" cy="360" r="7" class="ditto-ring" />
+                        <circle cx="720" cy="480" r="7" class="ditto-ring" />
+
+                        <!-- Moving Highlights along Dashes -->
                         <g class="car-group">
-                            <circle class="car" r="5" fill="var(--primary)">
-                                <animateMotion dur="4s" repeatCount="indefinite"
-                                    path="M100,500 C300,450 400,350 500,300" />
-                            </circle>
-                        </g>
-                        <g class="car-group">
-                            <circle class="car car--delay-1" r="5" fill="var(--primary)">
-                                <animateMotion dur="5s" repeatCount="indefinite"
-                                    path="M900,100 C700,150 600,250 500,300" />
-                            </circle>
-                        </g>
-                        <g class="car-group">
-                            <circle class="car car--delay-2" r="5" fill="var(--primary)">
-                                <animateMotion dur="6s" repeatCount="indefinite"
-                                    path="M100,100 C300,150 400,250 500,300" />
-                            </circle>
-                        </g>
-                        <g class="car-group">
-                            <circle class="car car--delay-3" r="5" fill="var(--primary)">
+                            <circle r="4" fill="#fff">
                                 <animateMotion dur="4.5s" repeatCount="indefinite"
-                                    path="M900,500 C700,450 600,350 500,300" />
+                                    path="M500,270 C400,200 350,150 280,150" />
                             </circle>
                         </g>
                         <g class="car-group">
-                            <circle class="car" r="4" fill="var(--primary)">
-                                <animateMotion dur="3.5s" repeatCount="indefinite" path="M50,300 L500,300" />
+                            <circle r="4" fill="#fff">
+                                <animateMotion dur="3.5s" repeatCount="indefinite" path="M500,270 L280,300" />
                             </circle>
                         </g>
                         <g class="car-group">
-                            <circle class="car car--delay-1" r="4" fill="var(--primary)">
-                                <animateMotion dur="4.2s" repeatCount="indefinite" path="M950,300 L500,300" />
+                            <circle r="4" fill="#fff">
+                                <animateMotion dur="5.5s" repeatCount="indefinite"
+                                    path="M500,270 C400,400 350,480 280,480" />
                             </circle>
                         </g>
                         <g class="car-group">
-                            <circle class="car car--delay-2" r="4" fill="var(--primary)">
-                                <animateMotion dur="5.5s" repeatCount="indefinite" path="M250,180 L500,300" />
+                            <circle r="4" fill="#fff">
+                                <animateMotion dur="4.2s" repeatCount="indefinite"
+                                    path="M500,270 C600,200 650,150 720,150" />
                             </circle>
                         </g>
                         <g class="car-group">
-                            <circle class="car car--delay-3" r="4" fill="var(--primary)">
-                                <animateMotion dur="4.8s" repeatCount="indefinite" path="M750,420 L500,300" />
+                            <circle r="4" fill="#fff">
+                                <animateMotion dur="3.8s" repeatCount="indefinite"
+                                    path="M500,270 C600,320 650,360 720,360" />
+                            </circle>
+                        </g>
+                        <g class="car-group">
+                            <circle r="4" fill="#fff">
+                                <animateMotion dur="5.2s" repeatCount="indefinite"
+                                    path="M500,270 C600,400 650,480 720,480" />
                             </circle>
                         </g>
                     </svg>
 
-                    <!-- Locality Markers -->
-                    <div class="map-node node-project" style="top: 50%; left: 50%;" data-target="project">
-                        <div class="node-project__card">
-                            <img src="logo.png" alt="Godrej Tycoon">
-                            <span>GODREJ TYCOON</span>
-                        </div>
-                        <div class="node-project__pulse"></div>
+                    <!-- Center Gold Teardrop Pin -->
+                    <div class="ditto-center-pin" style="top: 45%; left: 50%;">
+                        <svg viewBox="0 0 24 36" width="38" height="58">
+                            <path
+                                d="M12 0C5.373 0 0 5.373 0 12c0 9 12 24 12 24s12-15 12-24c0-6.627-5.373-12-12-12zm0 17c-2.761 0-5-2.239-5-5s2.239-5 5-5 5 2.239 5 5-2.239 5-5 5z"
+                                fill="#c90707" />
+                            <circle cx="12" cy="12" r="4" fill="#fff" />
+                        </svg>
                     </div>
 
-                    <div class="map-node" style="top: 83%; left: 10%;" data-category="transit">
-                        <div class="node-card">
-                            <div class="node-card__img-wrap">
-                                <img src="nearby_buildings.png" alt="Rapid Metro Building" class="node-card__img">
-                            </div>
-                            <div class="node-card__info">
-                                <span>RAPID METRO</span>
-                                <small>5 MINS</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="map-node" style="top: 16%; left: 90%;" data-category="lifestyle">
-                        <div class="node-card">
-                            <div class="node-card__img-wrap">
-                                <img src="nearby_buildings.png" alt="Mall Building" class="node-card__img">
-                            </div>
-                            <div class="node-card__info">
-                                <span>SOUTH POINT MALL</span>
-                                <small>8 MINS</small>
+                    <!-- LEFT CARDS -->
+                    <!-- 1. DLF Camellias -->
+                    <div class="ditto-node right" style="top: 25%; left: 72%;">
+                        <div class="ditto-card">
+                            <div class="ditto-card__icon"><i data-lucide="building-2"></i></div>
+                            <img src="images/camellias.webp" class="ditto-card__img" alt="Camellias">
+                            <div class="ditto-card__info">
+                                <h4>DLF Camellias</h4>
+                                <p>Approx. <span>5 Minutes</span></p>
+                                <p class="ditto-desc">Home to unicorn builders &<br>multibillionaires...</p>
+                                <small>
+                                    Deepinder Goyal,
+                                    Peyush Bansal,
+                                    Kapil Dev,
+                                    Aman Gupta,
+                                    Ashneer Grover
+                                </small>
                             </div>
                         </div>
                     </div>
 
-                    <div class="map-node" style="top: 16%; left: 10%;" data-category="health">
-                        <div class="node-card">
-                            <div class="node-card__img-wrap">
-                                <img src="nearby_buildings.png" alt="Hospital Building" class="node-card__img">
-                            </div>
-                            <div class="node-card__info">
-                                <span>MAX HOSPITAL</span>
-                                <small>5 MINS</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="map-node" style="top: 83%; left: 90%;" data-category="transit">
-                        <div class="node-card">
-                            <div class="node-card__img-wrap">
-                                <img src="nearby_buildings.png" alt="Airport Terminal" class="node-card__img">
-                            </div>
-                            <div class="node-card__info">
-                                <span>IGI AIRPORT</span>
-                                <small>20 MINS</small>
+                    <!-- 2. DLF The Magnolias -->
+                    <div class="ditto-node right" style="top: 50%; left: 72%;">
+                        <div class="ditto-card">
+                            <div class="ditto-card__icon"><i data-lucide="leaf"></i></div>
+                            <img src="images/magnolias.webp" class="ditto-card__img" alt="Magnolias">
+                            <div class="ditto-card__info">
+                                <h4>DLF The Magnolias</h4>
+                                <p>Approx. <span>5 Minutes</span></p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="map-node" style="top: 50%; left: 5%;" data-category="transit">
-                        <div class="node-card">
-                            <div class="node-card__img-wrap">
-                                <img src="nearby_buildings.png" alt="Office Building" class="node-card__img">
-                            </div>
-                            <div class="node-card__info">
-                                <span>DLF CYBER CITY</span>
-                                <small>15 MINS</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="map-node" style="top: 50%; left: 95%;" data-category="lifestyle">
-                        <div class="node-card">
-                            <div class="node-card__img-wrap">
-                                <img src="nearby_buildings.png" alt="Mall Building" class="node-card__img">
-                            </div>
-                            <div class="node-card__info">
-                                <span>AMBIENCE MALL</span>
-                                <small>15 MINS</small>
+                    <!-- 3. DLF Golf & Country Club -->
+                    <div class="ditto-node right" style="top: 80%; left: 72%;">
+                        <div class="ditto-card">
+                            <div class="ditto-card__icon"><i data-lucide="flag"></i></div>
+                            <img src="images/dlf-golf.webp" class="ditto-card__img" alt="Golf Club">
+                            <div class="ditto-card__info">
+                                <h4>DLF Golf & Country Club</h4>
+                                <p>Approx. <span>6 Minutes</span></p>
+                                <p class="ditto-desc">One of India's most elite<br>private golf clubs</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="map-node" style="top: 30%; left: 25%;" data-category="education">
-                        <div class="node-card">
-                            <div class="node-card__img-wrap">
-                                <img src="nearby_buildings.png" alt="School Building" class="node-card__img">
-                            </div>
-                            <div class="node-card__info">
-                                <span>ST. XAVIER'S SCHOOL</span>
-                                <small>10 MINS</small>
+                    <!-- RIGHT CARDS -->
+                    <!-- 4. One Horizon Center -->
+                    <div class="ditto-node left" style="top: 25%; left: 28%;">
+                        <div class="ditto-card">
+                            <div class="ditto-card__icon"><i data-lucide="building-2"></i></div>
+                            <img src="images/horizoncenter.webp" class="ditto-card__img" alt="One Horizon Center">
+                            <div class="ditto-card__info">
+                                <h4>One Horizon Center</h4>
+                                <p>Approx. <span>5-7 Minutes</span></p>
+                                <p class="ditto-desc">Corporate landmark housing<br>Fortune 500 giants.</p>
+
+                                <small>Oracle,
+                                    Apple Inc.,
+                                    Samsung,
+                                    American Express,
+                                    Coca-Cola,
+                                    Hyatt Hotels & many more</small>
+
                             </div>
                         </div>
                     </div>
 
-                    <div class="map-node" style="top: 70%; left: 75%;" data-category="health">
-                        <div class="node-card">
-                            <div class="node-card__img-wrap">
-                                <img src="nearby_buildings.png" alt="Hospital Building" class="node-card__img">
+                    <!-- 5. Rapid Metro -->
+                    <div class="ditto-node left" style="top: 60%; left: 28%;">
+                        <div class="ditto-card">
+                            <div class="ditto-card__icon"><i data-lucide="train"></i></div>
+                            <img src="images/rapid.avif" class="ditto-card__img" alt="Rapid Metro">
+                            <div class="ditto-card__info">
+                                <h4>Rapid Metro<br>Sector 53-54 Station</h4>
+                                <p>Approx. <span>2 Minutes</span></p>
                             </div>
-                            <div class="node-card__info">
-                                <span>PARK HOSPITAL</span>
-                                <small>10 MINS</small>
+                        </div>
+                    </div>
+
+                    <!-- 6. Cyber City / Cyber Hub -->
+                    <div class="ditto-node left" style="top: 80%; left: 28%;">
+                        <div class="ditto-card">
+                            <div class="ditto-card__icon"><i data-lucide="building"></i></div>
+                            <img src="images/cyber-city.jpg" class="ditto-card__img" alt="Cyber City">
+                            <div class="ditto-card__info">
+                                <h4>Cyber City /<br>Cyber Hub</h4>
+                                <p>Approx. <span>12-15 Minutes</span></p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Interactive Filters -->
-                <div class="travel-map__filters">
-                    <button class="filter-btn active" data-filter="all">All Access</button>
-                    <button class="filter-btn" data-filter="transit">Transit</button>
-                    <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
-                    <button class="filter-btn" data-filter="health">Healthcare</button>
-                    <button class="filter-btn" data-filter="education">Education</button>
-                </div>
+
             </div>
-        </div>
     </section>
 
 
